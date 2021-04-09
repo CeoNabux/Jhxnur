@@ -1,10 +1,10 @@
 <template lang="pug">
-  svg.is-medium.has-text-white
+  svg#icon.select-none
     path(:d='path')
 </template>
 
 <script>
-import icons from "@/components/helpers/icons.js";
+import Icons from "@/components/helpers/Icons.js";
 export default {
   name: "Icons",
   props: {
@@ -19,8 +19,17 @@ export default {
   },
   computed: {
     path() {
-      return icons[this.name];
+      return Icons[this.name];
     },
   },
 };
 </script>
+
+<style scoped>
+#icon {
+  width: 100%;
+  height: 100%;
+  stroke: 2.5px;
+  fill: currentColor;
+}
+</style>
