@@ -4,5 +4,4 @@
       a(href='/')
         img(src='')
     .navbar-menu
-
 </template>
