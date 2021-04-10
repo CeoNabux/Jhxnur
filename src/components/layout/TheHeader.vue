@@ -2,7 +2,7 @@
   //- SE ABRE EL HEADER
   nav.navbar.is-fluid.has-background-black.p-0.is-flex.justify-content-center
     //-CONTENEDOR CON LOS ELEMENTOS DEL HEADER
-    .container.is-widescreen.is-flex.is-justify-content-space-between.is-align-items-center
+    .container.is-widescreen.is-flex.is-justify-content-space-between.is-align-items-center.px-3
       //-LOGO
       figure.image.is-64x64.is-flex.is-align-items-center
         img(src='@/assets/logo/logo-white.svg')
