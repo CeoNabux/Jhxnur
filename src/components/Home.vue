@@ -3,10 +3,10 @@
 </template>
 
 <script>
-import TheHero from '@/components/sections/TheHero.vue'
+import TheHero from "@/components/sections/TheHero.vue";
 export default {
   components: {
     TheHero,
-  }
-}
+  },
+};
 </script>
