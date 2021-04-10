@@ -1,5 +1,5 @@
 <template lang="pug">
-  svg#icon.select-none
+  svg#icon.select-none.is-flex.is-align-items-center
     path(:d='path')
 </template>
 

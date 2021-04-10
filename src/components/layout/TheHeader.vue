@@ -9,8 +9,8 @@
 
       //-MENU-BURGER
       .is-flex.is-align-items-center
-        p.has-text-white.mr-2 MENU
-        figure.is-image.is-24x24.is-flex.is-align-items-center.has-text-white
+        p.mt-2.has-text-white.mr-3 MENU
+        figure.is-image.is-32x32.is-flex.is-align-items-center.has-text-white
           icons(name='menu' color='white')
 </template>
 
