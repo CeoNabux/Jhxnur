@@ -1,14 +1,12 @@
 <template lang="pug">
-  nav.navbar.is-fluid.has-background-black.p-0.is-flex.justify-content
-    .container.is-widescreen
-      .navbar-brand.ml-2
-        a(href='/')
-          figure.image.is-64x64.is-flex.justify-content.aligm-item
-            img(src='@/assets/logo/logo-white.svg')
-      .navbar-menu.mr-2
-        .navbar-end
-          .navbar-item
-            p MENU
+  nav.navbar.is-fluid.has-background-black.p-0.is-flex.justify-content-center
+    .container.is-widescreen.is-flex.is-justify-content-space-between.is-align-items-center
+      figure.image.is-64x64.is-flex.is-align-items-center
+        img(src='@/assets/logo/logo-white.svg')
+
+      .is-flex.is-align-items-center
+        p.has-text-white.m-2 MENU
+        figure.is-image.is-24x24.is-flex.is-align-items-center.has-text-white
           icons(name='menu' color='white')
 </template>
 
