@@ -26,5 +26,6 @@ export default {
 
 #app {
   font-family: "Bebas Neue";
+  background: #000;
 }
 </style>

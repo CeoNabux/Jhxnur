@@ -1,7 +1,8 @@
 <template lang="pug">
-  .container.is-widescree.has-background-black
-    the-hero
-    the-extras
+  .container.is-fluid.fondo
+    .container.if-fullhd
+      the-hero
+      the-extras
 </template>
 
 <script>
@@ -15,3 +16,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.fondo {
+  background: #000;
+}
+</style>
