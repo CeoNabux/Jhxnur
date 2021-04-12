@@ -1,6 +1,6 @@
 <template lang="pug">
-  section.hero.is-halfheight.fondo
-    .container.m-0.is-flex.px-4.is-relative
+  section.hero.is-large.fondo
+    .container.m-0.is-flex.is-align-items-center.px-4.is-relative.py-2.my-4
       .container
         .content.has-text-white.m-0
           p.is-size-7 Jhon león
