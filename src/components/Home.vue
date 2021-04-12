@@ -1,6 +1,7 @@
 <template lang="pug">
-  the-hero
-  the-extras
+  .container.is-widescree.has-background-black
+    the-hero
+    the-extras
 </template>
 
 <script>
