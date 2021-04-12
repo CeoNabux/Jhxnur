@@ -1,7 +1,7 @@
 <template lang="pug">
   section.hero.is-halfheight.has-background-black.is-flex.is-justify-content-center
-    .container.is-widescreen.is-flex.is-justify-content-between.flex-wrap.is-align-items-center.px-4
-      .container.py-6
+    .container.is-flex.is-justify-content-between.flex-wrap.is-align-items-center.px-4
+      .container.py-6.is-half
         .content.has-text-white.m-0
           p.is-size-7 Jhon león
         .content.is-fluid.has-text-white
@@ -14,8 +14,8 @@
           p.is-size-6.is-is-size-7-mobile Haz click, arratra y exprésate
       .container.is-half.pt-4
         .gradiente
-        figure.image.is-half
-          img(src='@/assets/noBackgroundPhotos/chico-de-espaldas.png')
+          figure.image.is-full
+            img(src='@/assets/noBackgroundPhotos/chico-de-espaldas.png')
 
 </template>
 
@@ -26,11 +26,10 @@
 .gradiente {
   position: relative;
   z-index: 5;
-  content: "";
   background: linear-gradient(
     90deg,
-    rgba(2, 0, 36, 1) 0%,
-    rgba(255, 255, 255, 0.04805672268907568) 10%
+    rgba(0, 0, 0, 1) 0%,
+    rgba(255, 255, 255, 0.04805672268907568) 50%
   );
 }
 
@@ -42,6 +41,14 @@
 @media only screen and (max-width: 420px) {
   .letter-spacing {
     letter-spacing: 20px;
+  }
+  .gradiente {
+    display: none;
+  }
+  .fondo {
+    background-image: url("../../assets/noBackgroundPhotos/chico-en-mesa.png");
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
 </style>
