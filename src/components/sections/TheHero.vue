@@ -5,8 +5,10 @@
         .content.has-text-white.m-0
           p.is-size-7 Jhon león
         .content.is-fluid.has-text-white
-          p.letter-spacing.is-size-1.is-size-2.mobile.m-0 CONTENT
-          p.letter-spacing.is-size-1.is-size-2.mobile CREATOR
+          h1
+            .letter-spacing.has-text-white.is-size-1.is-size-2.mobile.m-0 CONTENT
+            br
+            .letter-spacing.has-text-white.is-size-1.is-size-2.mobile CREATOR
         .content.has-text-white
           p.is-size-3.is-size-4-mobile.m-0 Amante al arte
           p.is-size-3.is-size-4-mobile materialicemos tus ideas
