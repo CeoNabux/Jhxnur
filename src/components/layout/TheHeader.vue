@@ -1,6 +1,6 @@
 <template lang="pug">
   //- SE ABRE EL HEADER
-  nav.navbar.is-fluid.has-background-black.p-0.is-flex.justify-content-center
+  nav.navbar.is-fluid.fondo.p-0.is-flex.justify-content-center
     //-CONTENEDOR CON LOS ELEMENTOS DEL HEADER
     .container.is-widescreen.is-flex.is-justify-content-space-between.is-align-items-center.px-3
       //-LOGO
@@ -22,3 +22,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.fondo {
+  background: #000;
+}
+</style>

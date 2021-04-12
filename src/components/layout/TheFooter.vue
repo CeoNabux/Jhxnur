@@ -1,5 +1,5 @@
 <template lang="pug">
-  footer.footer.has-background-black.px-0.py-4
+  footer.footer.fondo.px-0.py-4
     .container.is-widescreen
       a(href='/').is-flex.is-justify-content-center.is-align-items-center
         figure.image.is-32x32.mr-2
@@ -9,6 +9,9 @@
 </template>
 
 <style scoped>
+.fondo {
+  background: #000;
+}
 #underline {
   text-decoration: underline;
 }
