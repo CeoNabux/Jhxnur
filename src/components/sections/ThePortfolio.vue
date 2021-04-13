@@ -5,7 +5,7 @@
         h2 JhxnUrb
         p Conoce mi trabajo artistico
     .container.is-widescreen.is-flex.is-flex-wrap-wrap.is-justify-content-center.is-relative
-      .card.fondo(v-for="project, i in projects" :key="i")
+      .card.m-2.fondo(v-for="project, i in projects" :key="i")
         .card-image
           figure.image.is-5by6
             img(:src="project.image")
