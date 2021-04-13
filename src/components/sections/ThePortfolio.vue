@@ -9,10 +9,10 @@
         .card-image
           figure.image.is-5by6
             img(:src="project.image")
-        .card-content
-          .card-title.has-text-centered {{ project.title }}
         .coverPhoto
           img(src="@/assets/plastic/plastic10.png")
+        .card-content
+          .card-title.has-text-centered {{ project.title }}
 
 </template>
 
