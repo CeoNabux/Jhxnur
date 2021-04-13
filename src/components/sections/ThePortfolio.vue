@@ -4,13 +4,15 @@
       .content
         h2 JhxnUrb
         p Conoce mi trabajo artistico
-    .container.is-widescreen
-      .columns.is-desktop
-        .column.is-full-mobile.is-one-thirds-tablet.is-half-desktop(v-for="project, i in projects" :key="i")
-          figure.image.is-3by4
+    .container.is-widescreen.is-flex.is-flex-wrap-wrap.is-justify-content-center.is-relative
+      .card.fondo(v-for="project, i in projects" :key="i")
+        .card-image
+          figure.image.is-5by6
             img(:src="project.image")
-          .card-content
-            .card-title.has-text-centered {{ project.title }}
+        .card-content
+          .card-title.has-text-centered {{ project.title }}
+        .coverPhoto
+          img(src="@/assets/plastic/plastic10.png")
 
 </template>
 
@@ -19,14 +21,34 @@ export default {
   data: () => ({
     projects: [
       {
-        image: require("@/assets/noBackgroundPhotos/chica-de-cerca.png"),
+        image: require("@/assets/noBackgroundPhotos/chico-en-mesa.png"),
         title: "Titulo de ejemplo",
       },
       {
-        image: require("@/assets/noBackgroundPhotos/chica-de-cerca.png"),
+        image: require("@/assets/noBackgroundPhotos/chico-en-mesa.png"),
+        title: "Titulo de ejemplo",
+      },
+      {
+        image: require("@/assets/noBackgroundPhotos/chico-en-mesa.png"),
+        title: "Titulo de ejemplo",
+      },
+      {
+        image: require("@/assets/noBackgroundPhotos/chico-en-mesa.png"),
         title: "Titulo de ejemplo",
       },
     ],
   }),
 };
 </script>
+
+<style scoped>
+.fondo {
+  background: #000;
+}
+.coverPhoto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+</style>
