@@ -1,7 +1,7 @@
 <template lang="pug">
   section.container.is-widescreen.is-flex.is-flex-direction-column.is-relative
     .content.has-text-white
-      h2.has-text-white Extras
+      h2.letter-spacing.is-size-2.has-text-white Extras
       p Con mucho esfuerzo y dedicacion se trabajó este proyecto con la finalidad de que expongas tu arte.
     .container.is-widescreen.m-0.p-2.is-relative
       .is-flex.is-flex-direction-row.scroll-wrap
@@ -52,5 +52,18 @@ export default {
 }
 .asset-wrap {
   width: 250px;
+}
+.letter-spacing {
+  letter-spacing: 40px;
+}
+@media only screen and (max-width: 764px) {
+  .letter-spacing {
+    letter-spacing: 25px;
+  }
+}
+@media only screen and (max-width: 420px) {
+  .letter-spacing {
+    letter-spacing: 20px;
+  }
 }
 </style>
