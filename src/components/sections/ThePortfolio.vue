@@ -4,17 +4,15 @@
       .content
         p.has-text-white.mb-0 JhxnUr
         h2.letter-spacing.is-size-2.has-text-white.m-0 Portfolio
-    .container.is-widescreen.is-relative
-      .columns.is-desktop
-        .column.is-3-widescreen.is-hal-desktop.is-full-mobile(v-for="project, i in projects" :key="i")
-          .card.m-2.fondo
-            .card-image
-              figure.image.is-5by6
-                img(:src="project.image")
-              .coverPhoto
-                img(src="@/assets/plastic/plastic10.png")
-            .card-content
-              .card-title.has-text-centered {{ project.title }}
+    .container.is-widescreen.is-flex.is-flex-wrap-wrap.is-justify-content-center.is-relative
+      .container.m-2.fondo(v-for="project, i in projects" :key="i")
+        .card-image
+          figure.image.is-5by6
+            img(:src="project.image")
+          .coverPhoto
+            img(src="@/assets/plastic/plastic10.png")
+        .card-content
+          .card-title.has-text-centered {{ project.title }}
 
 </template>
 
