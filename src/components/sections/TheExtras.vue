@@ -38,6 +38,10 @@ export default {
         image: require("@/assets/photos/chica-en-techo.png"),
         title: "Titulo de ejemplo",
       },
+      {
+        image: require("@/assets/photos/chica-en-techo.png"),
+        title: "Titulo de ejemplo",
+      },
     ],
   }),
 };
