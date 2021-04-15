@@ -4,18 +4,21 @@
       the-hero
       the-extras
       the-portfolio
+      the-bio
 </template>
 
 <script>
-import TheHero from "@/components/sections/TheHero.vue";
-import TheExtras from "@/components/sections/TheExtras.vue";
-import ThePortfolio from "@/components/sections/ThePortfolio.vue";
+import TheHero from "@/components/homeSections/TheHero.vue";
+import TheExtras from "@/components/homeSections/TheExtras.vue";
+import ThePortfolio from "@/components/homeSections/ThePortfolio.vue";
+import TheBio from "@/components/homeSections/TheBio.vue";
 
 export default {
   components: {
     TheHero,
     TheExtras,
     ThePortfolio,
+    TheBio,
   },
 };
 </script>
