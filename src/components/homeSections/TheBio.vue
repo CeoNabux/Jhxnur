@@ -12,18 +12,23 @@
           p.is-size-4.has-text-white.mb-3 dirigido a
           h2.letter-spacing.is-size-2.is-size-3-mobile.has-text-white.m-0 empresas y marcas en redes sociales
       .column.auto
-        .card-image
-          figure.image
-            img(:scr="imageBack")
-        .imageFront
-          img(:scr="imageFront")
+        .container.is-relative
+          .card-image
+            figure.image
+              img(:scr="images.imageBack")
+          .imageFront
+            img(:scr="images.imageFront")
+
+
 </template>
 
 <script>
 export default {
   data: () => ({
-    imageBack: require("@/assets/noBackgroundPhotos/chico-en-escalera.png"),
-    imageFront: require("@/assets/noBackgroundPhotos/foto-arrugada.png"),
+    images: {
+      imageBack: require("@/assets/noBackgroundPhotos/chico-de-pie-escalera.png"),
+      imageFront: require("@/assets/noBackgroundPhotos/foto-arrugada.png"),
+    },
   }),
 };
 </script>
