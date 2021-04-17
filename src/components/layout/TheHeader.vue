@@ -4,8 +4,8 @@
     //-CONTENEDOR CON LOS ELEMENTOS DEL HEADER
     .container.is-widescreen.is-flex.is-justify-content-space-between.is-align-items-center.px-3
       //-LOGO
-      figure.image.is-64x64.is-flex.is-align-items-center
-        img(src='@/assets/logo/logo-white.svg')
+      figure.image.is-96x96.is-flex.is-align-items-center
+        img(src='@/assets/logo/logo-white.gif')
 
       //-MENU-BURGER
       .is-flex.is-align-items-center
