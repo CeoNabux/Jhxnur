@@ -1,5 +1,5 @@
 <template lang="pug">
-  svg#icon.select-none.is-flex.is-align-items-center
+  svg#icon.select-none
     path(:d='path')
 </template>
 
@@ -27,8 +27,8 @@ export default {
 
 <style scoped>
 #icon {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   stroke: 2.5px;
   fill: currentColor;
 }
