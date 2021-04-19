@@ -6,18 +6,18 @@
         p.has-text-white.letter-spacing.is-size-5 Cuéntame qué construiremos
       .form.my-4
         .container.is-flex.is-justify-content-center.is-flex-direction-column.is-align-items-center
-          .field.mb-8
-            label.mb-6 Nombre
+          .field.mb-6
+            label.labelText.mb-6 Nombre
             .control
-              input.inputText.fondo(type='text' placeholder="Escribe tu contenido")
-          .field.mb-8
-            label.mb-6 Correo
+              input.inputText.fondo(type='text' placeholder="Escribe tu nombre")
+          .field.mb-6
+            label.labelText.mb-6 Correo
             .control
-              input.inputText.fondo(type='text' placeholder="Escribe tu contenido")
-          .field.mb-8
-            label.mb-6 Cuéntame de tu proyecto
+              input.inputText.fondo(type='text' placeholder="Coloca tu correo")
+          .field.mb-6
+            label.labelText.mb-6 Cuéntame de tu proyecto
             .control
-              input.inputText.fondo(type='text' placeholder="Escribe tu contenido")
+              input.inputText.fondo(type='text' placeholder="Explica tu proyecto")
       .container.is-flex.my-4
         .columns
           .column
@@ -62,6 +62,10 @@ export default {
 }
 .inputText:focus {
   outline: none;
+  color: white;
+  border-bottom-style: groove;
+}
+.inputText:focus .labelText {
   color: white;
 }
 @media only screen and (max-width: 480px) {
