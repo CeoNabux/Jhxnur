@@ -25,15 +25,15 @@
               img(src="@/assets/logo/logo-white.gif")
           .column.is-flex.is-align-items-center.is-justify-content-center
             .columns
-              .column.is-flex.is-justify-content-center
+              .column.is-flex.is-justify-content-center.is-align-items-center
                 a(href="https://www.instagram.com/jhxnur")
                   icons.has-text-white(name="instagram")
-              .column.is-flex.is-justify-content-center
+              .column.is-flex.is-justify-content-center.is-align-items-center
                 a(href="https://youtube.com/channel/UCmYaKnHayQMyxm-j3kq499g")
                   icons.has-text-white(name="youtube")
-              .column.is-flex.is-justify-content-center
+              .column.is-flex.is-justify-content-center.is-align-items-center
                 a(href="https://www.behance.net/jhonlen")
-                  img(src="@/assets/icons/behance.svg")
+                  img.svgIcon(src="@/assets/icons/behance.svg")
 </template>
 
 <script>
@@ -71,10 +71,30 @@ export default {
   color: white;
 }
 
+.svgIcon {
+  width: 80px;
+  height: 80px;
+}
 
+@media only screen and (max-width: 770px) {
+  .svgIcon {
+    width: 35px;
+    height: 35px;
+  }
+}
+@media only screen and (max-width: 720px) {
+  .svgIcon {
+    width: 35px;
+    height: 35px;
+  }
+}
 @media only screen and (max-width: 480px) {
   .inputText {
     width: 280px;
+  }
+  .svgIcon {
+    width: 25px;
+    height: 25px;
   }
 }
 </style>
