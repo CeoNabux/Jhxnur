@@ -12,12 +12,11 @@
           p.is-size-4.has-text-white.mb-3 dirigido a
           h2.letter-spacing.is-size-2.is-size-3-mobile.has-text-white.m-0 empresas y marcas en redes sociales
       .column.auto
-        .container.is-relative
-          .card-image
-            figure.image
-              img(:scr="images.imageBack")
-          .imageFront
-            img(:scr="images.imageFront")
+        .container
+          figure.image
+            img.imageBack(:scr="images.imageBack")
+          figure.image
+            img.imageFront(:scr="images.imageFront")
 
 
 </template>
@@ -37,10 +36,14 @@ export default {
 .letter-spacing {
   letter-spacing: 12px;
 }
+.imageBack {
+  width: 250px;
+  height: 250px;
+}
 .imageFront {
   position: absolute;
-  left: 0;
   bottom: 0;
+  right: 0;
   width: 50px;
   height: 50px;
 }
