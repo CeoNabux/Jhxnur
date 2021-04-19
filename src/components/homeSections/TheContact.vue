@@ -17,7 +17,7 @@
           .field.mb-6
             label.labelText.mb-6 Cuéntame de tu proyecto
             .control
-              input.inputText.fondo(type='text' placeholder="Explica tu proyecto")
+              input.inputText.fondo(type='text' placeholder="Explícame tu proyecto")
       .container.is-flex.my-4
         .columns
           .column
@@ -25,15 +25,15 @@
               img(src="@/assets/logo/logo-white.gif")
           .column.is-flex.is-align-items-center.is-justify-content-center
             .columns
-              .column
+              .column.is-flex.is-justify-content-center
                 a(href="https://www.instagram.com/jhxnur")
                   icons.has-text-white(name="instagram")
-              .column
+              .column.is-flex.is-justify-content-center
                 a(href="https://youtube.com/channel/UCmYaKnHayQMyxm-j3kq499g")
                   icons.has-text-white(name="youtube")
-              .column
-                a(href="https://www.instagram.com/jhxnur")
-                  icons.has-text-white(name="instagram")
+              .column.is-flex.is-justify-content-center
+                a(href="https://www.behance.net/jhonlen")
+                  img(src="@/assets/icons/behance.svg")
 </template>
 
 <script>
@@ -59,15 +59,19 @@ export default {
   border-right-style: none;
   outline-color: none;
   width: 450px;
+  color: white;
 }
 .inputText:focus {
   outline: none;
   color: white;
   border-bottom-style: groove;
+  border-color: white;
 }
-.inputText:focus .labelText {
+.field:focus-within label {
   color: white;
 }
+
+
 @media only screen and (max-width: 480px) {
   .inputText {
     width: 280px;
