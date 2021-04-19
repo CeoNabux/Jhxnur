@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.container.is-widescreen
+  section.container.is-widescreen.my-6
     .columns.is-desktop
       .column.is-full-mobile.is-half-desktop
         .content

@@ -9,6 +9,8 @@
           .asset-wrap.my-4.mx-2.is-flex.is-flex-direction-column.fondo
             figure.image
               img(:src='asset.image')
+            .coverPhoto
+              img(src="@/assets/plastic/paquete1.png")
             .media
               .media-content
                 h3.has-text-white.has-text-centered {{ asset.title }}
@@ -50,6 +52,15 @@ export default {
 <style scoped>
 .fondo {
   background: #000 !important;
+}
+.coverPhoto {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+.coverPhoto img {
+  height: 100%;
 }
 .scroll-wrap {
   overflow-x: scroll;

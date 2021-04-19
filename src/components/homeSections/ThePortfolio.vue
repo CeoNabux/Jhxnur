@@ -10,7 +10,7 @@
           figure.image.is-5by6
             img(:src="project.image")
           .coverPhoto
-            img(src="@/assets/plastic/plastic10.png")
+            img(src="@/assets/plastic/paquete3.png")
         .card-content
           .card-title.has-text-centered {{ project.title }}
 
@@ -30,10 +30,6 @@ export default {
       },
       {
         image: require("@/assets/noBackgroundPhotos/chico-agachado.png"),
-        title: "Titulo de ejemplo",
-      },
-      {
-        image: require("@/assets/noBackgroundPhotos/chico-en-escalera.png"),
         title: "Titulo de ejemplo",
       },
     ],
