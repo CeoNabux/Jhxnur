@@ -9,11 +9,11 @@
           .field.mb-6
             label.labelText.mb-6 Nombre
             .control
-              input.inputText.fondo(v-model="contactName" type='text' placeholder="Escribe tu nombre")
+              input.inputText.fondo(v-model="name" type='text' placeholder="Escribe tu nombre")
           .field.mb-6
             label.labelText.mb-6 Correo
             .control
-              input.inputText.fondo(v-model= "contactMail" type='text' placeholder="Coloca tu correo")
+              input.inputText.fondo(v-model= "mail" type='text' placeholder="Coloca tu correo")
           .field.mb-6
             label.labelText.mb-6 Cuéntame de tu proyecto
             .control
@@ -48,21 +48,21 @@ export default {
     Icons,
   },
   data: () => ({
-    contactName: "",
-    contactMail: "",
+    name: "",
+    mail: "",
     message: "",
   }),
 
   methods: {
     resetInput() {
-      return (this.contactName = this.contactMail = this.contactmessage = "")
+      return (this.name = this.mail = this.message = "");
     },
     async sendMail() {
       const params = {
         to_name: "Jhon Leon",
-        from_name: this.contactName,
+        from_name: this.name,
         message: this.message,
-        reply_to: this.contactName,
+        reply_to: this.name,
       };
       try {
         await emailjs.send(
