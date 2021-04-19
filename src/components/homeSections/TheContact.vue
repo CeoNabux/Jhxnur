@@ -9,15 +9,18 @@
           .field.mb-6
             label.labelText.mb-6 Nombre
             .control
-              input.inputText.fondo(type='text' placeholder="Escribe tu nombre")
+              input.inputText.fondo(v-model="contactName" type='text' placeholder="Escribe tu nombre")
           .field.mb-6
             label.labelText.mb-6 Correo
             .control
-              input.inputText.fondo(type='text' placeholder="Coloca tu correo")
+              input.inputText.fondo(v-model= "contactMail" type='text' placeholder="Coloca tu correo")
           .field.mb-6
             label.labelText.mb-6 Cuéntame de tu proyecto
             .control
-              input.inputText.fondo(type='text' placeholder="Explícame tu proyecto")
+              input.inputText.fondo(v-model="message" type='text' placeholder="Explícame tu proyecto")
+          .field
+            .control
+              b-button.is-dark(@click.prevent="sendMail()" type="submit" inverted outlined expanded) Enviar
       .container.is-flex.my-4
         .columns
           .column
@@ -38,11 +41,45 @@
 
 <script>
 import Icons from "@/components/global/Icons.vue";
+// import emailjs from "emailjs-com";
 
 export default {
   components: {
     Icons,
   },
+  data: () => ({
+    contactName: "",
+    contactMail: "",
+    message: "",
+  }),
+
+  // methods: {
+  //   resetInput() {
+  //     (this.contactName = ""),
+  //     (this.contactMail = ""),
+  //     (this.contactmessage = ""),
+  //   },
+  //   async sendMail() {
+  //     const params = {
+  //       to_name: "Jhon Leon",
+  //       from_name: this.contactName,
+  //       message: this.message,
+  //       reply_to: this.contactName,
+  //     };
+  //     try {
+  //       await emailjs.send(
+  //         "service_d49zgnm",
+  //         "template_t6h7djm",
+  //         params,
+  //         "user_Mt6vpnGGpcC0h7a0M6e1w"
+  //       );
+  //       alert("email enviado");
+  //       this.resetInput();
+  //     } catch (error) {
+  //       alert(error);
+  //     }
+  //   },
+  // },
 };
 </script>
 
