@@ -2,20 +2,19 @@
   #app
     the-header
 
-    Home
+    router-view
 
     the-footer
 </template>
 
 <script>
 import TheHeader from "@/components/layout/TheHeader.vue";
-import Home from "@/components/Home.vue";
 import TheFooter from "@/components/layout/TheFooter.vue";
 
 export default {
+  name: "App",
   components: {
     TheHeader,
-    Home,
     TheFooter,
   },
 };
