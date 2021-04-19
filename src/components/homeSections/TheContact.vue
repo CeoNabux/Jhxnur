@@ -41,7 +41,7 @@
 
 <script>
 import Icons from "@/components/global/Icons.vue";
-// import emailjs from "emailjs-com";
+import emailjs from "emailjs-com";
 
 export default {
   components: {
@@ -53,33 +53,31 @@ export default {
     message: "",
   }),
 
-  // methods: {
-  //   resetInput() {
-  //     (this.contactName = ""),
-  //     (this.contactMail = ""),
-  //     (this.contactmessage = ""),
-  //   },
-  //   async sendMail() {
-  //     const params = {
-  //       to_name: "Jhon Leon",
-  //       from_name: this.contactName,
-  //       message: this.message,
-  //       reply_to: this.contactName,
-  //     };
-  //     try {
-  //       await emailjs.send(
-  //         "service_d49zgnm",
-  //         "template_t6h7djm",
-  //         params,
-  //         "user_Mt6vpnGGpcC0h7a0M6e1w"
-  //       );
-  //       alert("email enviado");
-  //       this.resetInput();
-  //     } catch (error) {
-  //       alert(error);
-  //     }
-  //   },
-  // },
+  methods: {
+    resetInput() {
+      return (this.contactName = this.contactMail = this.contactmessage = "")
+    },
+    async sendMail() {
+      const params = {
+        to_name: "Jhon Leon",
+        from_name: this.contactName,
+        message: this.message,
+        reply_to: this.contactName,
+      };
+      try {
+        await emailjs.send(
+          "service_d49zgnm",
+          "template_t6h7djm",
+          params,
+          "user_Mt6vpnGGpcC0h7a0M6e1w"
+        );
+        alert("email enviado");
+        this.resetInput();
+      } catch (error) {
+        alert(error);
+      }
+    },
+  },
 };
 </script>
 
