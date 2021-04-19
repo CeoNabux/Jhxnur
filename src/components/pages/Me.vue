@@ -1,16 +1,16 @@
 <template lang="pug">
   .container.is-widescreen
-    .conainer.is-widescreen
+    .conainer.is-widescreen.is-flex.is-flex-wrap-wrap
       .container
         figure.image.is-3by4
           img(src="@/assets/noBackgroundPhotos/chico-en-mesa.png")
-      .container
-        .content.is-flex.is-wrap
+      .container.is-flex.is-flex-direction-column
+        .content.is-flex.is-flex-direction-column.is-flex-wrap-wrap
           h3.is-size-3 Acerca de Jhxnur
           p.is-size-6.has-text-white Mi Nombre es Jhon León y tengo 19 años, soy creador de contenido audiovisual y me dedico a crear contenido para empresas y marcas en medio digitales. Mi conocimiento lo he formado empíricamente graccias a cusos online que he tomado y sobre todo por las propuestas laborales en las que he participado.
           <br/> Tengo conocimientos con el uso de software de edición y postproducción de fotografía, video y realidad aumentada.
           <br/> La finalidad de esta página es compartir mis conocimientos, proyectos y sobre todo recursos para crear contenido audiovidual que será de mucha utilidad para la comunidad de creadores.
-        .content.is-flex.is-wrap
+        .content.is-flex.is-flex-direction-column.is-flex-wrap-wrap
           h3.is-size-3 Mi primer contacto
           p.is-size-6.has-text-white Mi primer contacto con el arte se remonta a principios del 2006, pues desde muy pequeño me llamó mucho la atención dibujar, pintar y el simple hecho de poder plasmar lo que yo quisiera en un papel, cartón o en cualquier material que pase a convertirse en mi lienzo en concursos de dibujo y pintura.
           <br /> Luego de eso me empecé a interesar mucho por la tecnología y el avance que había tenido esta, tuve mi promer computador a los 8 años con windows XP y pasaba horas jugando en "Mi primera encarta" y ejecitando cualquier .exe que estuviera en la carpeta más escondida en el Sistema Operativo. Al mismo tiempo, desarmaba todo lo que encontrara en mi casa, muy poco quedaba funcional después de eso.
@@ -21,7 +21,7 @@
           <br /> Después de esto empecé a venderme como
           strong Creador Digital
             p y no como "fotógrafo" porque este título de crador engloba mucho más y realmente me apasiona mostrar mi arte al mundo a trabés de cualquier pieza audiovisual que pueda crear.
-        .content.is-flex.is-wrap
+        .content.is-flex.is-flex-direction-column.is-flex-wrap-wrap
           h3.is-size-3 ¿Qué pienso al respecto?
           p.is-size-6.has-text-white Estoy demasiado seguro que es mucho más importante la pasión y amor hacia el trabajo que realices que la retribución económica o material que puedas obtener de esto, lo menciono porque tengo muchos colegas del medio que se frustran contantemente por no obtener lo que quisieran entonces esto me llevan a pensar que es más placentero disfrutar plenamente de esto y dar lo mejor de simismo para hacerlo bien. La retribución económica llegará después porque las cosas bien hechas de corazón traen consigo eso y más beneficios, sin embargo hay que tener presente que esta no es la meta si no un causante de un trabajo de calidad y la verdadera metra es el proceso y la satisfacción de realizar tu trabajo de la mejor manera a medida de tus posibilidades.
 
