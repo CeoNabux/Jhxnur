@@ -2,6 +2,8 @@
   #app
     the-header
 
+    the-menu
+
     router-view
 
     the-footer
@@ -9,13 +11,19 @@
 
 <script>
 import TheHeader from "@/components/layout/TheHeader.vue";
+import TheMenu from "@/components/layout/TheMenu.vue";
 import TheFooter from "@/components/layout/TheFooter.vue";
+import { mapGetters } from "vuex";
 
 export default {
   name: "App",
   components: {
     TheHeader,
+    TheMenu,
     TheFooter,
+  },
+  computed: {
+    ...mapGetters("config_drawer", ["show"]),
   },
 };
 </script>
