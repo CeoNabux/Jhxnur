@@ -11,24 +11,26 @@
         .content
           p.is-size-4.has-text-white.mb-3 dirigido a
           h2.letter-spacing.is-size-2.is-size-3-mobile.has-text-white.m-0 empresas y marcas en redes sociales
+        router-link(to="/me")
+          b-button.is-warning(alternate) Quieres conocer más sobre
       .column.auto
         .container
           figure.image
-            img.imageBack(:scr="images.imageBack")
+            img.imageBack(scr="#")
           figure.image
-            img.imageFront(:scr="images.imageFront")
+            img.imageFront(scr="#")
 
 
 </template>
 
 <script>
 export default {
-  data: () => ({
-    images: {
-      imageBack: require("@/img/chico-de-pie-escalera.png"),
-      imageFront: require("@/img/foto-arrugada.png"),
-    },
-  }),
+  // data: () => ({
+  //   images: {
+  //     imageBack: require("@/img/chico-de-pie-escalera.png"),
+  //     imageFront: require("@/img/foto-arrugada.png"),
+  //   },
+  // }),
 };
 </script>
 
