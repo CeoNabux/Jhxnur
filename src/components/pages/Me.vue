@@ -2,7 +2,7 @@
   .container.is-widescreen.py-1.px-2
     .container.px-2
       .columns
-        .column.is-one-thirds
+        .column.is-two-fifths
           .container.p-2
             figure.image.is-1by1
               img(src="@/assets/noBackgroundPhotos/chico-de-espaldas.png")
@@ -16,7 +16,7 @@
               <br/>
               p.is-size-7.is-size-6-tablet.letter-spacing-2.has-text-white La finalidad de esta página es compartir mis conocimientos, proyectos y sobre todo recursos para crear contenido audiovidual que será de mucha utilidad para la comunidad de creadores.
       .columns
-        .column.is-one-thirds
+        .column.is-two-fifths
           .container.p-2
             figure.image.is-3by4
               img(src="@/assets/noBackgroundPhotos/chico-agachado.png")
@@ -41,7 +41,7 @@
             p.is-size-7.is-size-6-tablet.letter-spacing-2.has-text-white Después de esto empecé a venderme como <strong>Creador Digital</strong>
             p.is-size-7.is-size-6-tablet.letter-spacing-2.has-text-white y no como "fotógrafo" porque este título de crador engloba mucho más y realmente me apasiona mostrar mi arte al mundo a trabés de cualquier pieza audiovisual que pueda crear.
       .columns
-        .column.is-one-thirds
+        .column.is-two-fifths
           .container.p-2
             figure.image.is-3by4
               img(src="@/assets/noBackgroundPhotos/chico-en-mesa.png")
@@ -64,9 +64,14 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: orange;
+  text-decoration: underline;
+  text-decoration-color: orange;
 }
 .letter-spacing-2 {
   letter-spacing: 3px;
   line-height: 1.75rem;
+}
+strong {
+  color: green;
 }
 </style>
