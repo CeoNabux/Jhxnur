@@ -8,10 +8,11 @@
         img(src='@/assets/logo/logo-white.gif')
 
       //-MENU-BURGER
-      .is-flex.is-align-items-center
-        p.mt-2.has-text-white.mr-3 MENU
-        figure.is-image.is-32x32.is-flex.is-align-items-center.has-text-white
-          icons(name='menu' color='white')
+      .containaer.is-flex.is-flex-direction-row.is-align-items-center
+        p.has-text-white.mr-4 MENU
+        b-button.is-dark(outlined)
+          .container.is-flex.is-justify-content-center.is-align-items-center
+            icons.has-text-white(name='menu' color='white')
 </template>
 
 <script>
@@ -26,5 +27,9 @@ export default {
 <style scoped>
 .fondo {
   background: #000;
+}
+.btn {
+  border: 1px solid white;
+  border-radius: 4px;
 }
 </style>
