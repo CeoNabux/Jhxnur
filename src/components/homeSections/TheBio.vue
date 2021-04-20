@@ -25,8 +25,8 @@
 export default {
   data: () => ({
     images: {
-      imageBack: require("@/assets/noBackgroundPhotos/chico-de-pie-escalera.png"),
-      imageFront: require("@/assets/noBackgroundPhotos/foto-arrugada.png"),
+      imageBack: require("@/img/chico-de-pie-escalera.png"),
+      imageFront: require("@/img/foto-arrugada.png"),
     },
   }),
 };
