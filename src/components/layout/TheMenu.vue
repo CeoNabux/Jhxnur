@@ -1,6 +1,7 @@
 <template lang="pug">
-  .container.has-background-white
-    .container.menu(:class="{'menu-hidden': show}")
+  .container.is-fluid.has-background-white.m-0.menu(:class="{'menu-hidden': !show}")
+    .container
+      p Esto es un trabajo increible
 
 </template>
 
@@ -16,14 +17,16 @@ export default {
 
 <style scoped>
 .menu-hidden {
-  transform: translateX(-100%);
+  transform: translateX(100%);
 }
 .menu {
   position: fixed;
-  z-index: 15;
+  z-index: 50;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
+  transition-duration: 500ms;
+  transition-delay: 100ms;
 }
 </style>

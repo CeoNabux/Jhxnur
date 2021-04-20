@@ -4,6 +4,7 @@ import Buefy from "buefy";
 import "buefy/dist/buefy.css";
 import VueRouter from "vue-router";
 import routes from "@/routes.js";
+import store from "@/store.js";
 
 Vue.use(Buefy);
 
@@ -19,4 +20,5 @@ Vue.config.productionTip = false;
 new Vue({
   render: (h) => h(App),
   router,
+  store,
 }).$mount("#app");
