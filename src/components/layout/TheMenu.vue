@@ -13,17 +13,21 @@
     section
       .content(v-for="(item, i) in items" :key="i")
         router-link(:to="item.link")
-          p.is-size-3 {{ item.item }}
+          vue-slick-carousel
+            p.is-size-3(@click="drawerAction") {{ item.item }}
 
 </template>
 
 <script>
 import { mapGetters, mapActions } from "vuex";
 import Icons from "@/components/global/Icons.vue";
+import VueSlickCarousel from "vue-slick-carousel";
+import "vue-slick-carousel/dist/vue-slick-carousel.css";
 
 export default {
   components: {
     Icons,
+    VueSlickCarousel,
   },
   data: () => ({
     image: require("@/assets/img/wave.png"),
