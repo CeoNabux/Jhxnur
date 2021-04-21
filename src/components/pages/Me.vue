@@ -5,7 +5,7 @@
         .column.is-two-fifths
           .container.p-2
             figure.image.is-1by1
-              img(src="@/assets/noBackgroundPhotos/chico-de-espaldas.png")
+              img(src="@/assets/noBackgroundPhotos/chico-de-espaldas.png" class="mask")
         .column.is-full-mobile
           .container.px-4.is-flex.is-flex-direction-column
             .content.is-flex.is-flex-direction-column.is-flex-wrap-wrap
@@ -19,7 +19,7 @@
         .column.is-two-fifths
           .container.p-2
             figure.image.is-3by4
-              img(src="@/assets/noBackgroundPhotos/chico-agachado.png")
+              img.mask(src="@/assets/noBackgroundPhotos/chico-agachado.png")
         .column.is-full-mobile
           .container.px-4.is-flex.is-flex-direction-column
             .content.is-flex.is-flex-direction-column.is-flex-wrap-wrap
@@ -44,7 +44,7 @@
         .column.is-two-fifths
           .container.p-2
             figure.image.is-3by4
-              img(src="@/assets/noBackgroundPhotos/chico-en-mesa.png")
+              img.clipped(src="@/assets/noBackgroundPhotos/chico-en-mesa.png")
         .column.is-full-mobile
           .container.px-4.is-flex.is-flex-direction-column
             .content.is-flex.is-flex-direction-column.is-flex-wrap-wrap
@@ -73,5 +73,14 @@
 }
 strong {
   color: green;
+}
+.mask {
+  mask-image: url("../../assets/img/brush.png");
+  mask-position: top center;
+  mask-repeat: no-repeat;
+  mask-size: 100%;
+}
+.clipped {
+  clip-path: polygon(16% 4%, 84% 0, 100% 81%, 2% 98%);
 }
 </style>
