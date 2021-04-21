@@ -5,7 +5,7 @@
         .column.is-two-fifths
           .container.p-2
             figure.image.is-1by1
-              img(src="@/assets/noBackgroundPhotos/chico-de-espaldas.png" class="mask")
+              img.clipped2(src="@/assets/noBackgroundPhotos/chico-de-espaldas.png")
         .column.is-full-mobile
           .container.px-4.is-flex.is-flex-direction-column
             .content.is-flex.is-flex-direction-column.is-flex-wrap-wrap
@@ -76,11 +76,14 @@ strong {
 }
 .mask {
   mask-image: url("../../assets/img/brush.png");
-  mask-position: top center;
+  mask-position: center;
   mask-repeat: no-repeat;
-  mask-size: 100%;
+  mask-size: 80%;
 }
 .clipped {
   clip-path: polygon(16% 4%, 84% 0, 100% 81%, 2% 98%);
+}
+.clipped2 {
+  clip-path: circle(57% at 49% 38%);
 }
 </style>
