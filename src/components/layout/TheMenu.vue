@@ -10,12 +10,10 @@
               b-button.is-dark(outlined @click="drawerAction")
                 .container.is-flex.is-justify-content-center.is-align-items-center
                   icons.has-text-black(name="close" color="black")
-    section.waves-container
-      .wave.wave1.imgClass(:style="{ backgroundImage: 'url(' + image + ')'}")
-      .wave.wave2.imgClass(:style="{ backgroundImage: 'url(' + image + ')'}")
-      .wave.wave3.imgClass(:style="{ backgroundImage: 'url(' + image + ')'}")
-      .wave.wave4.imgClass(:style="{ backgroundImage: 'url(' + image + ')'}")
-      .wave.wave5.imgClass(:style="{ backgroundImage: 'url(' + image + ')'}")
+    section
+      .content(v-for="(item, i) in items" :key="i")
+        router-link(:to="item.link")
+          p.is-size-3 {{ item.item }}
 
 </template>
 
@@ -29,6 +27,11 @@ export default {
   },
   data: () => ({
     image: require("@/assets/img/wave.png"),
+    items: [
+      { item: "Extras", link: "/extras" },
+      { item: "Portfolio", link: "/portfolio" },
+      { item: "Me", link: "/me" },
+    ],
   }),
   computed: {
     ...mapGetters("config_drawer", ["show"]),
