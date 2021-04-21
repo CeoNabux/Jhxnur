@@ -1,0 +1,19 @@
+<template lang="pug">
+  .container.if-fullhd#cursor
+</template>
+
+<style scoped>
+/* #cursor {
+  $size: 2px;
+  display: block;
+  position: absolute;
+  height: $size;
+  width: $size;
+  border-radius: ceil($size / 2);
+  background-color: transparent;
+
+  // hide on init
+  top: -100px;
+  left: -100px;
+} */
+</style>

@@ -14,7 +14,7 @@
         p.has-text-white.mr-4 MENU
         b-button.is-dark(outlined @click="drawerAction")
           .container.is-flex.is-justify-content-center.is-align-items-center
-            icons.has-text-white(name='menu' color='white')
+            icons.has-text-white(name="menu" color='white')
 </template>
 
 <script>
@@ -42,9 +42,5 @@ export default {
 <style scoped>
 .fondo {
   background: #000;
-}
-.btn {
-  border: 1px solid white;
-  border-radius: 4px;
 }
 </style>
