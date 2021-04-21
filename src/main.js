@@ -5,10 +5,13 @@ import "buefy/dist/buefy.css";
 import VueRouter from "vue-router";
 import routes from "@/routes.js";
 import store from "@/store.js";
+import StoryblokVue from "storyblok-vue";
 
 Vue.use(Buefy);
 
 Vue.use(VueRouter);
+
+Vue.use(StoryblokVue);
 
 const router = new VueRouter({
   routes,
