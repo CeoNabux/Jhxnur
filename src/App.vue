@@ -1,11 +1,11 @@
 <template lang="pug">
   #app
-    .container.is-fluid.fondo.is-flex.is-justify-content-space-between.is-flex-direction-column
+    .container.is-fluid.fondo.is-flex.is-justify-content-space-between.is-flex-direction-column.px-0
       the-header
 
       the-menu
 
-      router-view.mb-auto
+      router-view.px-0
 
       the-footer
 </template>
