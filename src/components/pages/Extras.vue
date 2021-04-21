@@ -2,6 +2,9 @@
   .container.is-widescreen
     .content
       h2.is-size-2.font-color Crea tu propio arte Urbano
+    .container
+      .columns
+        .column
 </template>
 
 <style scoped>
