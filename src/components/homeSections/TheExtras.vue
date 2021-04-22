@@ -1,6 +1,6 @@
 <template lang="pug">
   section.container.is-widescreen.is-flex.is-flex-direction-column.is-relative
-    .content.has-text-white
+    .content.has-text-white.px-4
       h2.letter-spacing.is-size-2.has-text-white Extras
       p Con mucho esfuerzo y dedicacion se trabajó este proyecto con la finalidad de que expongas tu arte.
     .container.is-widescreen.m-0.p-2.is-relative.wrapper

@@ -1,7 +1,7 @@
 <template lang="pug">
   section.container.is-widescreen.my-6
     .container.mb-4
-      .content
+      .content.px-4
         p.has-text-white.mb-0 JhxnUr
         h2.letter-spacing.is-size-2.has-text-white.m-0 Portfolio
     .container.is-widescreen.is-flex.is-flex-wrap-wrap.is-justify-content-center.is-relative
