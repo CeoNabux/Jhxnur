@@ -1,8 +1,8 @@
 <template lang="pug">
   section.is-large.fondo.my-4.is-flex.is-justify-content-center
     .container.is-widescreen.is-relative.py-2.mb-4.is-flex.m-0
-      .is-flex.is-align-items-center.is-flex-direction-column.is-justify-content-center
-        .is-flex.is-justify-content-flex-start
+      .is-flex.is-align-items-start.is-flex-direction-column.is-justify-content-center
+        .is-flex.is-align-items-start
           .content.has-text-white.m-0
             p.p-2.is-size-7 Jhon león
         .is-flex
