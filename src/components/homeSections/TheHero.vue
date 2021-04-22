@@ -1,5 +1,5 @@
 <template lang="pug">
-  section.is-large.fondo.my-4.is-flex.is-justify-content-center
+  section.is-large.fondo.is-flex.is-justify-content-center
     .container.is-widescreen.is-relative.py-2.mb-4.is-flex
       .is-flex.is-align-items-start.is-flex-direction-column.is-justify-content-center.px-4
         .is-flex.is-align-items-start
@@ -18,14 +18,14 @@
         .is-flex
           .content.has-text-warning.mt-4
             p.p-2.is-size-6.is-is-size-7-mobile Haz click, arratra y exprésate
-      .container.p-0
+      .container.is-flex.is-justify-content-flex-end
         img.hero-image(src="@/assets/photos/chico-bengala.png")
 </template>
 
 <style scoped>
 .hero-image {
   mask-image: linear-gradient(to right, transparent 12%, black 75%);
-  width: 100%;
+  width: 70%;
 }
 .fondo {
   background: #000;
@@ -55,7 +55,7 @@
   }
 }
 @media only screen and (max-width: 580px) {
-  .gradiente {
+  .hero-image {
     display: none;
   }
 }
