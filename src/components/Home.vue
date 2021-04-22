@@ -1,6 +1,6 @@
 <template lang="pug">
   .container.is-fluid.fondo
-    .container.if-fullhd
+    .container.is-fluid.p-0
       the-hero
       the-extras
       the-portfolio
