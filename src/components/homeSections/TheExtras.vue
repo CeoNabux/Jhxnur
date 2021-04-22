@@ -3,10 +3,10 @@
     .content.has-text-white
       h2.letter-spacing.is-size-2.has-text-white Extras
       p Con mucho esfuerzo y dedicacion se trabajó este proyecto con la finalidad de que expongas tu arte.
-    .container.is-widescreen.m-0.p-2.is-relative
+    .container.is-widescreen.m-0.p-2.is-relative.wrapper
       .is-flex.is-flex-direction-row.scroll-wrap
         .container(v-for='asset, i in assets' :key="i")
-          .asset-wrap.my-4.mx-2.is-flex.is-flex-direction-column.fondo
+          .asset-wrap.my-4.mx-4.is-flex.is-flex-direction-column.fondo
             figure.image
               img(:src='asset.image')
             .coverPhoto
@@ -62,9 +62,17 @@ export default {
 .coverPhoto img {
   height: 100%;
 }
+.wrapper {
+  overflow: hidden;
+}
 .scroll-wrap {
   overflow-x: scroll;
+  padding-bottom: 18px;
+  box-sizing: content-box;
 }
+/* ::-webkit-scrollbar {
+  background: transparent;
+} */
 .asset-wrap {
   width: 250px;
 }
