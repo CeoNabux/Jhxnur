@@ -1,23 +1,23 @@
 <template lang="pug">
-  section.hero.is-large.fondo.my-4
+  section.is-large.fondo.my-4.is-flex.is-justify-content-center
     .container.is-widescreen.is-relative.py-2.mb-4.is-flex.m-0
-      .container.is-flex.is-align-items-center.is-flex-direction-column.is-justify-content-center
-        .block
+      .is-flex.is-align-items-center.is-flex-direction-column.is-justify-content-center
+        .is-flex.is-justify-content-flex-start
           .content.has-text-white.m-0
-            p.has-text-left-desktop.is-size-7 Jhon león
-        .block
+            p.p-2.is-size-7 Jhon león
+        .is-flex
           .content.is-fluid.has-text-white
             h1
-              .letter-spacing.has-text-white.is-size-1.is-size-2.mobile.m-0 CONTENT
+              .p-2.letter-spacing.has-text-white.is-size-1.is-size-2.mobile.m-0 CONTENT
               br
-              .letter-spacing.has-text-white.is-size-1.is-size-2.mobile CREATOR
-        .block
+              .p-2.letter-spacing.has-text-white.is-size-1.is-size-2.mobile CREATOR
+        .is-flex
           .content.has-text-white
-            p.is-size-3.is-size-4-mobile.m-0 Amante al arte
-            p.is-size-3.is-size-4-mobile materialicemos tus ideas
-        .block
+            p.p-2.is-size-3.is-size-4-mobile.m-0 Amante al arte
+            p.p-2.is-size-3.is-size-4-mobile materialicemos tus ideas
+        .is-flex
           .content.has-text-warning.mt-4
-            p.is-size-6.is-is-size-7-mobile Haz click, arratra y exprésate
+            p.p-2.is-size-6.is-is-size-7-mobile Haz click, arratra y exprésate
       .container.p-0
         img.hero-image(src="@/assets/photos/chico-bengala.png")
 </template>
