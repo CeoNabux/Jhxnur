@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@mdi/js": "^5.9.55",
+    "axios": "^0.21.1",
     "buefy": "^0.9.6",
     "core-js": "^3.6.5",
     "emailjs": "^3.4.0",

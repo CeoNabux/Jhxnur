@@ -29,3 +29,35 @@
   color: orange;
 }
 </style>
+
+<script>
+import storyapi from "@/utils/api.js";
+
+export default {
+  created() {
+    window.storyblok.init({
+      accessToken: process.env.VUE_APP_TOKEN,
+    });
+    window.storyblok.on("change", () => {
+      if (window.storyblok.inInEditor()) {
+        this.getStory("extras", "draft");
+      } else {
+        this.getStory("extras", "published");
+      }
+    });
+  },
+  methods: {
+    async getStory(slug, version) {
+      let data;
+      try {
+        data = await storyapi.get("cdn/stories/extras" + slug, {
+          version: version,
+        });
+        console.log(data);
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  },
+};
+</script>
