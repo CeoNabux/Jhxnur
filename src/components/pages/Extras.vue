@@ -5,35 +5,23 @@
     .container
       .columns.is-desktop.is-multiline
         .column.is-one-thirds.p-4
-          router-link(to="/")
-            .card
-              .card-image
-                figure.image.is-1by1
-                  img(src="#")
-              .card-content
-                .media
-                  .media-content
-                    p.title.is-size-5.has-text-black Titulo de ejemplo
-                    p.subtitle.is-6 precio del producto
+          extraPreview(:title="title" :price="price" :id="id" :image="image")
 </template>
-
-<style scoped>
-.font-color {
-  background: -webkit-linear-gradient(
-    270deg,
-    rgba(254, 237, 44, 1) 3%,
-    rgba(156, 65, 8, 1) 83%
-  );
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  color: orange;
-}
-</style>
 
 <script>
 import storyapi from "@/utils/api.js";
+import extraPreview from "@/components/extrasSections/extraPreview.vue";
 
 export default {
+  components: {
+    extraPreview,
+  },
+  data: () => ({
+    title: "title",
+    price: 2.5,
+    id: "/",
+    image: "#",
+  }),
   created() {
     window.storyblok.init({
       accessToken: process.env.VUE_APP_TOKEN,
@@ -50,7 +38,7 @@ export default {
     async getStory(slug, version) {
       let data;
       try {
-        data = await storyapi.get("cdn/stories/extras" + slug, {
+        data = await storyapi.get("cdn/stories/" + slug, {
           version: version,
         });
         console.log(data);
@@ -61,3 +49,16 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.font-color {
+  background: -webkit-linear-gradient(
+    270deg,
+    rgba(254, 237, 44, 1) 3%,
+    rgba(156, 65, 8, 1) 83%
+  );
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: orange;
+}
+</style>

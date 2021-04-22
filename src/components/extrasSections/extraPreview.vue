@@ -1,5 +1,5 @@
 <template lang="pug">
-  router-link(:to="to")
+  router-link(:to="id")
     .card
       .card-image
         figure.image.is-1by1
@@ -13,6 +13,7 @@
 
 <script>
 export default {
+  name: "extraPreview",
   props: {
     title: {
       type: String,
@@ -23,7 +24,7 @@ export default {
       required: true,
     },
     price: {
-      type: String,
+      type: Number,
       required: true,
     },
     id: {
