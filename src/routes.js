@@ -20,6 +20,11 @@ const routes = [
     name: "extras",
   },
   {
+    path: "/extras/:id",
+    component: Extras,
+    name: "extras",
+  },
+  {
     path: "/me",
     component: Me,
     name: "me",
