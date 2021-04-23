@@ -1,7 +1,8 @@
 import Me from "@/components/pages/Me.vue";
 import Home from "@/components/Home.vue";
 import Portfolio from "@/components/pages/Portfolio.vue";
-import Extras from "@/components/pages/Extras.vue";
+import ExtrasIndex from "@/components/pages/ExtrasIndex.vue";
+import Extra from "@/components/pages/Extra.vue";
 
 const routes = [
   {
@@ -15,14 +16,14 @@ const routes = [
     name: "portfolio",
   },
   {
-    path: "/extras",
-    component: Extras,
-    name: "extras",
+    path: "/extras-index",
+    component: ExtrasIndex,
+    name: "extras-index",
   },
   {
-    path: "/extras/:id",
-    component: Extras,
-    name: "extras",
+    path: "/extra/:id",
+    component: Extra,
+    name: "extra",
   },
   {
     path: "/me",

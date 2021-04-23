@@ -1,7 +1,7 @@
 import StoryblokClient from "storyblok-js-client";
 
 const storyapi = new StoryblokClient({
-  accessToken: process.env.VUE_APP_TOKEN,
+  accessToken: "zTjkyshEcSSUYrcrcXL9Hgtt",
 });
 
 export default storyapi;

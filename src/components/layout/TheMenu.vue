@@ -27,7 +27,7 @@ export default {
   data: () => ({
     image: require("@/assets/img/wave.png"),
     items: [
-      { item: "Extras", link: "/extras" },
+      { item: "Extras", link: "/extras-index" },
       { item: "Portfolio", link: "/portfolio" },
       { item: "Me", link: "/me" },
     ],
