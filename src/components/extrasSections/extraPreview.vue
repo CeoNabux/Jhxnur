@@ -1,5 +1,5 @@
 <template lang="pug">
-  router-link(:to="id")
+  router-link(:to="`extra/${id}`" )
     .card
       .card-image
         figure.image.is-1by1
@@ -8,7 +8,7 @@
         .media
           .media-content
             p.title.is-size-5.has-text-black {{ title }}
-            p.subtitle.is-6 {{ price }}
+            p.subtitle.is-6 ${{ price }}
 </template>
 
 <script>
