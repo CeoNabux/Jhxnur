@@ -10,6 +10,9 @@
           b-carousel-list(v-model="props.active" :data="items" :v-bind="al" @switch="props.switch($event, false)" as-indicator)
         template#overlay
           .has-text-centered.has-text-white Hello i am overlay
+
+      p {{}}
+      p {{}}
 </template>
 
 <script>
@@ -17,7 +20,7 @@ import storyapi from "@/utils/api.js";
 
 export default {
   data: () => ({
-    extras: [],
+    extra: [],
     gallery: false,
     al: {
       hasGrayScale: true,
@@ -58,10 +61,20 @@ export default {
     async getStory(slug, version) {
       let data;
       try {
-        data = await storyapi.get("cdn/stories/extras", +slug, {
-          version: version,
-        });
-        console.log(data);
+        let i;
+        data = await storyapi
+          .get("cdn/stories/extras", +slug, {
+            version: version,
+          })
+          .then((res) => {
+            return {
+              items: res.data.story.content.imagenes[i].filename,
+              title: res.data.story.content.nombre,
+              description: res.data.story.content.descripcion,
+              precio: res.data.story.content.precio,
+            };
+          });
+        this.items.push(data.items);
       } catch (e) {
         console.error(e);
       }

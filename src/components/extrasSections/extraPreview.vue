@@ -1,9 +1,9 @@
 <template lang="pug">
-  router-link(:to="`extra/${id}`" )
+  router-link(:to="`extras/${id}`" )
     .card
       .card-image
         figure.image.is-1by1
-          img(:src="image")
+          img(:src="image" loading:"lazy")
       .card-content
         .media
           .media-content
