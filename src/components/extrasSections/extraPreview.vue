@@ -3,7 +3,7 @@
     .card
       .card-image
         figure.image.is-1by1
-          img(:src="image" loading:"lazy")
+          img(v-lazy="image")
       .card-content
         .media
           .media-content
