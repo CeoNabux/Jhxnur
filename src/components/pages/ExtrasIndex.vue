@@ -60,7 +60,6 @@ export default {
             };
           });
         this.extras.push(data.extras);
-        console.log(data);
       } catch (e) {
         console.error(e);
       }

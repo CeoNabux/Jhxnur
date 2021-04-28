@@ -11,8 +11,9 @@
         template#overlay
           .has-text-centered.has-text-white Hello i am overlay
 
-      p {{}}
-      p {{}}
+    p.has-text-white {{data.name}}
+    p.has-text-white {{description}}
+    p.has-text-white {{price}}
 </template>
 
 <script>
@@ -20,7 +21,7 @@ import storyapi from "@/utils/api.js";
 
 export default {
   data: () => ({
-    extra: [],
+    data: [],
     gallery: false,
     al: {
       hasGrayScale: true,
@@ -36,7 +37,6 @@ export default {
         },
       },
     },
-    items: [],
   }),
   created() {
     // 4. Initialize the Storyblok Client Bridge to allow us to subscribe to events
@@ -59,24 +59,20 @@ export default {
   },
   methods: {
     async getStory(slug, version) {
-      let data;
       try {
-        let i;
-        data = await storyapi
-          .get("cdn/stories/extras", +slug, {
+        await storyapi
+          .get("cdn/stories/" + slug + "/" + this.$route.params.id, {
             version: version,
           })
           .then((res) => {
-            return {
-              items: res.data.story.content.imagenes[i].filename,
-              title: res.data.story.content.nombre,
-              description: res.data.story.content.descripcion,
-              precio: res.data.story.content.precio,
+            this.data = {
+              name: res.data.story.content.nombre,
+              price: res.data.story.content.precio,
+              description: res.data.story.content.decripcion,
             };
           });
-        this.items.push(data.items);
       } catch (e) {
-        console.error(e);
+        console.error("Tienes que volverlo a intentar");
       }
     },
     switchGallery(value) {
