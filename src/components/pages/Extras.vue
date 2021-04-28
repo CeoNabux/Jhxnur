@@ -7,9 +7,9 @@
       :overlay="gallery"
       @click="switchGallery(true)"
     >
-      <b-carousel-item v-for="(imagen, i) in data.imagenes" :key="i">
+      <b-carousel-item v-for="(img, i) in stories.imagenes" :key="i">
         <figure class="image">
-          <img :src="imagen" />
+          <img :src="img.image" />
         </figure>
       </b-carousel-item>
       <span
@@ -20,7 +20,7 @@
       <template #list="props">
         <b-carousel-list
           v-model="props.active"
-          :data="images"
+          :data="stories.imagenes"
           v-bind="al"
           @switch="props.switch($event, false)"
           as-indicator
@@ -38,8 +38,7 @@ import storyapi from "@/utils/api.js";
 
 export default {
   data: () => ({
-    data: [],
-    images: [],
+    stories: {},
     gallery: false,
     al: {
       hasGrayScale: true,
@@ -82,21 +81,26 @@ export default {
           .get("cdn/stories/" + slug + "/" + this.$route.params.id, {
             version: version,
           })
-          .then((res) => {
-            this.data = {
-              name: res.data.story.content.nombre,
-              price: res.data.story.content.precio,
-              description: res.data.story.content.decripcion,
-              imagenes: res.data.story.content.imagenes.map(
-                (img) => img.filename
-              ),
+          .then(({ data }) => {
+            const {
+              nombre,
+              precio,
+              descripcion,
+              imagenes,
+            } = data.story.content;
+
+            this.stories = {
+              nombre,
+              precio,
+              descripcion,
+              imagenes: [],
             };
 
-            const images = res.data.story.content.imagenes;
-
-            images.forEach(({ filename: image }) =>
-              this.images.push({ image })
+            imagenes.forEach(({ filename: image }) =>
+              this.stories.imagenes.push({ image })
             );
+
+            return true;
           });
       } catch (e) {
         console.error("Tienes que volverlo a intentar");
