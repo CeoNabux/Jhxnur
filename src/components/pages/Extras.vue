@@ -18,9 +18,9 @@
         class="modal-close is-large"
       />
       <template #list="props">
-        <b-carousel-list
+        <b-carousel-listgit
           v-model="props.active"
-          :data="images"
+          :data="data.imagenes"
           v-bind="al"
           @switch="props.switch($event, false)"
           as-indicator
@@ -39,7 +39,6 @@ import storyapi from "@/utils/api.js";
 export default {
   data: () => ({
     data: [],
-    images: [],
     gallery: false,
     al: {
       hasGrayScale: true,
@@ -91,12 +90,6 @@ export default {
                 (img) => img.filename
               ),
             };
-
-            const images = res.data.story.content.imagenes;
-
-            images.forEach(({ filename: image }) =>
-              this.images.push({ image })
-            );
           });
       } catch (e) {
         console.error("Tienes que volverlo a intentar");
