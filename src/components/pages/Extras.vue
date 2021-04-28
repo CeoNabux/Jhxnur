@@ -1,19 +1,36 @@
-<template lang="pug">
-  .container.is-widescreen.fondo
-    .container
-      b-carousel(:autoplay="true" with-carousel-list :indicator="false" :overlay="gallery" @click="switchGallery(true)")
-        b-carousel-item(v-for="item, i in items" :key="i")
-          figure.image
-            img(:src="item.image")
-        span.modal-close.is-large(v-if="gallery" @click="switchGallery(false)")
-        template(#list="props")
-          b-carousel-list(v-model="props.active" :data="items" :v-bind="al" @switch="props.switch($event, false)" as-indicator)
-        template#overlay
-          .has-text-centered.has-text-white Hello i am overlay
-
-    p.has-text-white {{data.name}}
-    p.has-text-white {{data.description}}
-    p.has-text-white {{data.price}}
+<template>
+  <div class="container">
+    <b-carousel
+      :autoplay="false"
+      with-carousel-list
+      :indicator="false"
+      :overlay="gallery"
+      @click="switchGallery(true)"
+    >
+      <b-carousel-item v-for="(imagen, i) in data.imagenes" :key="i">
+        <figure class="image">
+          <img :src="imagen" />
+        </figure>
+      </b-carousel-item>
+      <span
+        v-if="gallery"
+        @click="switchGallery(false)"
+        class="modal-close is-large"
+      />
+      <template #list="props">
+        <b-carousel-list
+          v-model="props.active"
+          :data="data.imagenes"
+          v-bind="al"
+          @switch="props.switch($event, false)"
+          as-indicator
+        />
+      </template>
+      <template #overlay>
+        <div class="has-text-centered has-text-white">Hello i'am overlay!</div>
+      </template>
+    </b-carousel>
+  </div>
 </template>
 
 <script>
@@ -69,6 +86,9 @@ export default {
               name: res.data.story.content.nombre,
               price: res.data.story.content.precio,
               description: res.data.story.content.decripcion,
+              imagenes: res.data.story.content.imagenes.map(
+                (img) => img.filename
+              ),
             };
           });
       } catch (e) {
