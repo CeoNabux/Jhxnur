@@ -7,6 +7,12 @@ import routes from "@/routes.js";
 import store from "@/store.js";
 import StoryblokVue from "storyblok-vue";
 import VueLazyLoad from "vue-lazyload";
+import VueCompositionApi from "@vue/composition-api";
+import VueRichTextRenderer from "@marvr/storyblok-rich-text-vue-renderer";
+
+Vue.use(VueCompositionApi);
+
+Vue.use(VueRichTextRenderer);
 
 Vue.use(VueLazyLoad);
 

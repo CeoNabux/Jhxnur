@@ -12,8 +12,8 @@
           .has-text-centered.has-text-white Hello i am overlay
 
     p.has-text-white {{data.name}}
-    p.has-text-white {{description}}
-    p.has-text-white {{price}}
+    p.has-text-white {{data.description}}
+    p.has-text-white {{data.price}}
 </template>
 
 <script>
