@@ -1,35 +1,64 @@
 <template>
-  <div class="container">
-    <b-carousel
-      :autoplay="false"
-      with-carousel-list
-      :indicator="false"
-      :overlay="gallery"
-      @click="switchGallery(true)"
-    >
-      <b-carousel-item v-for="(img, i) in stories.imagenes" :key="i">
-        <figure class="image">
-          <img :src="img.image" />
-        </figure>
-      </b-carousel-item>
-      <span
-        v-if="gallery"
-        @click="switchGallery(false)"
-        class="modal-close is-large"
-      />
-      <template #list="props">
-        <b-carousel-listgit
-          v-model="props.active"
-          :data="stories.imagenes"
-          v-bind="al"
-          @switch="props.switch($event, false)"
-          as-indicator
-        />
-      </template>
-      <template #overlay>
-        <div class="has-text-centered has-text-white">Hello i'am overlay!</div>
-      </template>
-    </b-carousel>
+  <div class="container px-6">
+    <div class="content mb-4">
+      <h2 class="has-text-white is-size-2 is-size-4-mobile has-text-centered">
+        {{ stories.nombre }}
+      </h2>
+    </div>
+    <div class="columns is-dektop is-multiline my-6">
+      <div class="column is-half mr-4">
+        <b-carousel
+          :autoplay="false"
+          with-carousel-list
+          :indicator="false"
+          :overlay="gallery"
+          @click="switchGallery(true)"
+        >
+          <b-carousel-item v-for="(img, i) in stories.imagenes" :key="i">
+            <figure class="image">
+              <img :src="img.image" />
+            </figure>
+          </b-carousel-item>
+          <span
+            v-if="gallery"
+            @click="switchGallery(false)"
+            class="modal-close is-large"
+          />
+          <template #list="props">
+            <b-carousel-list
+              v-model="props.active"
+              :data="stories.imagenes"
+              v-bind="al"
+              @switch="props.switch($event, false)"
+              as-indicator
+            />
+          </template>
+          <template #overlay>
+            <div class="has-text-centered has-text-white">
+              Hello i'am overlay!
+            </div>
+          </template>
+        </b-carousel>
+      </div>
+      <div class="column auto">
+        <div class="content">
+          <p class="has-text-white">
+            {{ stories.nombre }}
+          </p>
+        </div>
+        <div class="content">
+          <rich-text-renderer class="has-text-white">
+            {{ stories.descripcion }}
+          </rich-text-renderer>
+        </div>
+        <div class="content">
+          <p class="has-text-white is-size-5">$ {{ stories.precio }}</p>
+        </div>
+        <div class="block">
+          <b-button class="is-success">Aqui va el link de whatsapp</b-button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
