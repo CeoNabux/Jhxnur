@@ -1,13 +1,13 @@
 <template lang="pug">
   #app
-    .container.is-fluid.fondo.is-flex.is-justify-content-space-between.is-flex-direction-column.px-0
+    .fondo.aver.is-flex.is-flex-direction-column.is-justify-content-space-between.px-0
       the-header
 
       the-menu
 
       router-view.px-0
 
-      the-footer
+      the-footer.margin
 </template>
 
 <script>
@@ -36,8 +36,11 @@ export default {
   font-family: "Bebas Neue";
   background: #000;
 }
-.mb-auto {
-  margin-bottom: 100vh;
+.margin {
+  margin-top: auto;
+}
+.aver {
+  min-height: 100vh;
 }
 .fondo {
   background: #000;
