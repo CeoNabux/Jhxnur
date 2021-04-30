@@ -1,7 +1,7 @@
 <template lang="pug">
   section.container.is-widescreen.my-6
     .columns.is-desktop.m-0
-      .column.p-0
+      .column.p-0.mb-6
         .content.px-4.my-4
           p.is-size-4.has-text-white.mb-3 Hola, soy
           h2.letter-spacing.is-size-2.is-size-3-mobile.has-text-white.m-0 Jhon León
