@@ -32,9 +32,9 @@ export default {
     });
     window.storyblok.pingEditor(() => {
       if (window.storyblok.isInEditor()) {
-        this.getStory("extras-index", "draft");
+        this.getStory("extras", "draft");
       } else {
-        this.getStory("extras-index", "published");
+        this.getStory("extras", "published");
       }
     });
   },
@@ -44,10 +44,11 @@ export default {
       try {
         data = await storyapi
           .get("cdn/stories/", {
-            starts_width: "extras-index/",
+            starts_with: "extras/",
             version: version,
           })
           .then((res) => {
+            console.log(res)
             return {
               extras: res.data.stories.map((ex) => {
                 return {
