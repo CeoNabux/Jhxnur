@@ -1,31 +1,34 @@
 <template lang="pug">
-  section.is-large.fondo.is-flex.is-justify-content-center
-    .container.is-widescreen.is-relative.py-2.mb-4.is-flex
-      .is-flex.is-align-items-start.is-flex-direction-column.is-justify-content-center.px-4
-        .is-flex.is-align-items-start
-          .content.has-text-white.m-0
-            p.p-2.is-size-7 Jhon león
-        .is-flex
-          .content.is-fluid.has-text-white
-            h1
-              .p-2.letter-spacing.has-text-white.is-size-1.is-size-2.mobile.m-0 CONTENT
-              br
-              .p-2.letter-spacing.has-text-white.is-size-1.is-size-2.mobile CREATOR
-        .is-flex
-          .content.has-text-white
-            p.p-2.is-size-3.is-size-4-mobile.m-0 Amante al arte
-            p.p-2.is-size-3.is-size-4-mobile materialicemos tus ideas
-        .is-flex
-          .content.has-text-warning.mt-4
-            p.p-2.is-size-6.is-is-size-7-mobile Haz click, arratra y exprésate
-      .container.is-flex.is-justify-content-flex-end
-        img.hero-image(src="@/assets/photos/chico-bengala.png")
+  section.fondo.is-flex.is-justify-content-center
+    .container.is-widescreen.is-relative
+      .columns
+        .column.is-three-fifths.is-flex.is-justify-content-center.p-0
+          .is-flex.is-align-items-start.is-flex-direction-column.is-justify-content-center.px-4
+            .is-flex.is-align-items-start
+              .content.has-text-white.m-0
+                p.p-2.is-size-7 Jhon león
+            .is-flex
+              .content.is-fluid.has-text-white
+                h1
+                  .p-2.letter-spacing.has-text-white.is-size-1.is-size-2.mobile.m-0 CONTENT
+                  br
+                  .p-2.letter-spacing.has-text-white.is-size-1.is-size-2.mobile CREATOR
+            .is-flex
+              .content.has-text-white
+                p.p-2.is-size-3.is-size-4-mobile.m-0 Amante al arte
+                p.p-2.is-size-3.is-size-4-mobile materialicemos tus ideas
+            .is-flex
+              .content.has-text-warning.mt-4
+                p.p-2.is-size-6.is-is-size-7-mobile Haz click, arratra y exprésate
+        .column
+          .container.is-fluid.px-0
+            img.hero-image(src="@/assets/photos/chico-bengala.png")
 </template>
 
 <style scoped>
 .hero-image {
   mask-image: linear-gradient(to right, transparent 12%, black 75%);
-  width: 70%;
+  width: 100%;
 }
 .fondo {
   background: #000;
@@ -52,6 +55,9 @@
 @media only screen and (max-width: 764px) {
   .letter-spacing {
     letter-spacing: 25px;
+  }
+  .hero-image {
+    display: none;
   }
 }
 @media only screen and (max-width: 580px) {
