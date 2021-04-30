@@ -46,9 +46,11 @@
             {{ stories.nombre }}
           </p>
         </div>
-        <div class="content">
-          <rich-text-renderer class="has-text-white">
-            {{ stories.descripcion }}
+        <div class="content has-text-white">
+          <rich-text-renderer
+            :document="stories.descripcion"
+            class="has-text-white"
+          >
           </rich-text-renderer>
         </div>
         <div class="content">
