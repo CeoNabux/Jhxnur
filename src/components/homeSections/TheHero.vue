@@ -1,9 +1,9 @@
 <template lang="pug">
-  section.fondo.is-flex.is-justify-content-center
-    .container.is-widescreen.is-relative
+  section.fondo.is-flex.is-justify-content-center.mb-6
+    .container.is-widescreen.is-relative.mx-3
       .columns
         .column.is-three-fifths.is-flex.is-justify-content-center.p-0
-          .is-flex.is-align-items-start.is-flex-direction-column.is-justify-content-center.px-4
+          .is-flex.is-align-items-start.is-flex-direction-column.is-justify-content-center
             .is-flex.is-align-items-start
               .content.has-text-white.m-0
                 p.p-2.is-size-7 Jhon león
@@ -20,8 +20,8 @@
             .is-flex
               .content.has-text-warning.mt-4
                 p.p-2.is-size-6.is-is-size-7-mobile Haz click, arratra y exprésate
-        .column
-          .container.is-fluid.px-0
+        .column.p-0
+          .container.px-0
             img.hero-image(src="@/assets/photos/chico-bengala.png")
 </template>
 
