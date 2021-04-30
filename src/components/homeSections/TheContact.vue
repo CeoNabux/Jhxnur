@@ -1,5 +1,5 @@
 <template lang="pug">
-  .container.is-widescreen.mt-6
+  .container.is-widescreen.my-6
     .container.is-flex.is-flex-direction-column
       .content.px-4
         h2.has-text-white.letter-spacing.is-size-2.is-size-3-mobile ¿Tienes un proyecto en mente?

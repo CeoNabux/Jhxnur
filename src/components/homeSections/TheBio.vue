@@ -1,6 +1,6 @@
 <template lang="pug">
   section.container.is-widescreen.my-6
-    .columns.is-desktop.m-0
+    .columns.is-desktop.mx-0.my-4.py-4
       .column.p-0.mb-6
         .content.px-4.my-4
           p.is-size-4.has-text-white.mb-3 Hola, soy
