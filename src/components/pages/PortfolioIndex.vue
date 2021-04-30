@@ -3,27 +3,19 @@
     .content
       h2.is-size-2.font-color conoce mi portafolio
     .container
-      .columns.is-desktop.is-multiline(v-for="project,i in projects" :key="i")
+      .columns.is-desktop.is-multiline(v-for="project,i in projects[0]" :key="i")
         .column.is-one-thirds.p-4
-          router-link(:to="project.id")
-            .card
-              .card-image
-                figure.image.is-1by1
-                  img(:src="project.portada")
-              .card-content
-                .media
-                  .media-left
-                    figure.image.is-48x-48
-                      img(:src="project.logo")
-                  .media-content
-                    p.title.is-size-5.has-text-black {{ project.titulo }}
-                    p.subtitle.is-6 {{ project.cliente }}
+          projectPreview(:id="project.id" :coverPhoto="project.portada" :client="project.cliente" :logo="project.logo" :title="project.titulo")
 </template>
 
 <script>
 import storyapi from "@/utils/api.js";
+import projectPreview from "@/components/portfolioSections/projectPreview.vue";
 
 export default {
+  components: {
+    projectPreview,
+  },
   data: () => ({
     projects: [],
   }),
@@ -58,18 +50,19 @@ export default {
           .then((res) => {
             console.log(res);
             return {
-              project: res.data.stories.map((port) => {
-                console.log(port);
+              project: res.data.stories.map((pt) => {
+                console.log(pt);
                 return {
-                  id: port.slug,
-                  titulo: port.content.titulo,
-                  cliente: port.content.cliente,
-                  logo: port.content.logo.filename,
-                  portada: port.content.portada.filename,
+                  id: pt.slug,
+                  titulo: pt.content.titulo,
+                  cliente: pt.content.cliente,
+                  logo: pt.content.logo.filename,
+                  portada: pt.content.portada.filename,
                 };
               }),
             };
           });
+        console.log(data);
         console.log(data.project.id);
         this.projects.push(data.project);
         console.log(this.projects);
