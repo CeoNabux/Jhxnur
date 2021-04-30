@@ -1,16 +1,27 @@
 <template lang="pug">
   .container.is-fluid.has-background-white.p-0.m-0.menu(:class="{'menu-hidden': !show}")
-    .container.is-widescreen.py-4
+    .container.is-widescreen.py-4.menuContainer
       .container.is-flex.is-justify-content-flex-end.py-2
         b-button.is-dark(outlined @click="drawerAction")
           .container.is-flex.is-justify-content-center.is-align-items-center
             icons.has-text-black(name="close" color="black")
-    section
-      .content(v-for="(item, i) in items" :key="i")
-        router-link(:to="item.link")
-          vue-slick-carousel
-            p.is-size-3(@click="drawerAction") {{ item.item }}
-
+      section
+        vue-slick-carousel
+          .content(v-for="(item, i) in extras" :key="i")
+            router-link(:to="item.link")
+              p.is-size-3(@click="drawerAction") {{ item.item }}
+        vue-slick-carousel
+          .content(v-for="(item, i) in portfolio" :key="i")
+            router-link(:to="item.link")
+              p.is-size-3(@click="drawerAction") {{ item.item }}
+        vue-slick-carousel
+          .content(v-for="(item, i) in me" :key="i")
+            router-link(:to="item.link")
+              p.is-size-3(@click="drawerAction") {{ item.item }}
+        vue-slick-carousel
+          .content(v-for="(item, i) in home" :key="i")
+            router-link(:to="item.link")
+              p.is-size-3(@click="drawerAction") {{ item.item }}
 </template>
 
 <script>
@@ -26,9 +37,28 @@ export default {
   },
   data: () => ({
     image: require("@/assets/img/wave.png"),
-    items: [
-      { item: "Extras", link: "/extras-index" },
+    home: [
+      { item: "Home", link: "/" },
+      { item: "Home", link: "/" },
+      { item: "Home", link: "/" },
+      { item: "Home", link: "/" },
+    ],
+    portfolio: [
       { item: "Portfolio", link: "/portfolio-index" },
+      { item: "Portfolio", link: "/portfolio-index" },
+      { item: "Portfolio", link: "/portfolio-index" },
+      { item: "Portfolio", link: "/portfolio-index" },
+    ],
+    extras: [
+      { item: "Extras", link: "/extras-index" },
+      { item: "Extras", link: "/extras-index" },
+      { item: "Extras", link: "/extras-index" },
+      { item: "Extras", link: "/extras-index" },
+    ],
+    me: [
+      { item: "Me", link: "/me" },
+      { item: "Me", link: "/me" },
+      { item: "Me", link: "/me" },
       { item: "Me", link: "/me" },
     ],
   }),
@@ -60,5 +90,9 @@ export default {
   bottom: 0;
   transition-duration: 500ms;
   transition-delay: 100ms;
+}
+.menuContainer {
+  width: 100vw;
+  height: 100vh;
 }
 </style>
