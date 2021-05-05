@@ -5,61 +5,63 @@
         {{ stories.nombre }}
       </h2>
     </div>
-    <div class="columns is-dektop is-multiline my-6">
-      <div class="column is-half">
-        <b-carousel
-          :autoplay="false"
-          with-carousel-list
-          :indicator="false"
-          :overlay="gallery"
-          @click="switchGallery(true)"
-        >
-          <b-carousel-item v-for="(img, i) in stories.imagenes" :key="i">
-            <figure class="image">
-              <img :src="img.image" />
-            </figure>
-          </b-carousel-item>
-          <span
-            v-if="gallery"
-            @click="switchGallery(false)"
-            class="modal-close is-large"
-          />
-          <template #list="props">
-            <b-carousel-list
-              v-model="props.active"
-              :data="stories.imagenes"
-              v-bind="al"
-              @switch="props.switch($event, false)"
-              as-indicator
-            />
-          </template>
-          <template #overlay>
-            <div class="has-text-centered has-text-white">
-              Hello i'am overlay!
-            </div>
-          </template>
-        </b-carousel>
-      </div>
-      <div class="column auto">
-        <div class="content">
-          <p class="has-text-white is-size-3 has-text-centered">
-            {{ stories.nombre }}
-          </p>
-        </div>
-        <div class="content has-text-white">
-          <rich-text-renderer
-            :document="stories.descripcion"
-            class="has-text-white"
+    <div class="container">
+      <div class="columns is-dektop is-multiline my-6">
+        <div class="column is-two-thirds">
+          <b-carousel
+            :autoplay="false"
+            with-carousel-list
+            :indicator="false"
+            :overlay="gallery"
+            @click="switchGallery(true)"
           >
-          </rich-text-renderer>
+            <b-carousel-item v-for="(img, i) in stories.imagenes" :key="i">
+              <figure class="image">
+                <img :src="img.image" />
+              </figure>
+            </b-carousel-item>
+            <span
+              v-if="gallery"
+              @click="switchGallery(false)"
+              class="modal-close is-large"
+            />
+            <template #list="props">
+              <b-carousel-list
+                v-model="props.active"
+                :data="stories.imagenes"
+                v-bind="al"
+                @switch="props.switch($event, false)"
+                as-indicator
+              />
+            </template>
+            <template #overlay>
+              <div class="has-text-centered has-text-white">
+                Hello i'am overlay!
+              </div>
+            </template>
+          </b-carousel>
         </div>
-        <div class="content">
-          <p class="has-text-white is-size-5">$ {{ stories.precio }}</p>
-        </div>
-        <div class="block">
-          <b-button @click="redirection" class="is-success">
-            <icons name="whatsapp"></icons>
-          </b-button>
+        <div class="column auto">
+          <div class="content">
+            <p class="has-text-white is-size-3 has-text-centered">
+              {{ stories.nombre }}
+            </p>
+          </div>
+          <div class="content has-text-white">
+            <rich-text-renderer
+              :document="stories.descripcion"
+              class="has-text-white"
+            >
+            </rich-text-renderer>
+          </div>
+          <div class="content">
+            <p class="has-text-white is-size-5">$ {{ stories.precio }}</p>
+          </div>
+          <div class="block">
+            <b-button @click="redirection" class="is-success">
+              <icons name="whatsapp"></icons>
+            </b-button>
+          </div>
         </div>
       </div>
     </div>
