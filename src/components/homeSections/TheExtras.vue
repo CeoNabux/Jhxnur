@@ -6,12 +6,13 @@
     .container.is-widescreen.m-0.p-2.is-relative.wrapper
       .is-flex.is-flex-direction-row.scroll-wrap
         .is-container.is-flex.is-flex-direction-column.is-justify-content-space-between(v-for="extra, i in extras[0]" :key="i")
-          .asset-wrap.my-4.mx-4.is-flex.is-flex-direction-column.fondo
-            .is-relative
-              figure.image
-                img(:src='extra.image')
-              .coverPhoto
-                img(src="@/assets/plastic/paquete1.png")
+          router-link(:to="`extras/${extra.id}`")
+            .asset-wrap.my-4.mx-4.is-flex.is-flex-direction-column.fondo
+              .is-relative
+                figure.image.is-4by3
+                  img(:src='extra.image')
+                .coverPhoto
+                  img(src="@/assets/plastic/paquete1.png")
           .media
             .media-content
               h3.has-text-white.has-text-centered {{ extra.title }}
