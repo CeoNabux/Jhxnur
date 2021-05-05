@@ -5,15 +5,16 @@
       p Con mucho esfuerzo y dedicacion se trabajó este proyecto con la finalidad de que expongas tu arte.
     .container.is-widescreen.m-0.p-2.is-relative.wrapper
       .is-flex.is-flex-direction-row.scroll-wrap
-        .container(v-for="extra, i in extras[0]" :key="i")
+        .is-container.is-flex.is-flex-direction-column.is-justify-content-space-between(v-for="extra, i in extras[0]" :key="i")
           .asset-wrap.my-4.mx-4.is-flex.is-flex-direction-column.fondo
-            figure.image
-              img(:src='extra.image')
-            .coverPhoto
-              img(src="@/assets/plastic/paquete1.png")
-            .media
-              .media-content
-                h3.has-text-white.has-text-centered {{ extra.nombre }}
+            .is-relative
+              figure.image
+                img(:src='extra.image')
+              .coverPhoto
+                img(src="@/assets/plastic/paquete1.png")
+          .media
+            .media-content
+              h3.has-text-white.has-text-centered {{ extra.title }}
 </template>
 
 <script>
@@ -84,9 +85,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
-}
-.coverPhoto img {
+  z-index: 3;
   height: 100%;
 }
 .wrapper {
