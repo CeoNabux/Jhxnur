@@ -1,10 +1,10 @@
 <template lang="pug">
   .container
-    .container.is-widescreen
-      is-loading
-      .grid
-        .boxContainer(v-for="imagen, i in stories.imagenes" :key="i")
-          img(v-lazy="imagen.image")
+    .container.is-widescreen.is-flex.px-4
+      .columns.is-multiline
+        .column.is-full(v-for="imagen, i in stories.imagenes" :key="i")
+          figure.image
+            img(v-lazy="imagen.image")
 </template>
 
 <script>
@@ -65,41 +65,3 @@ export default {
   },
 };
 </script>
-
-<style scoped>
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  grid-template-rows: minmax(100px, 0.5fr);
-  grid-auto-flow: dense;
-}
-.grid .boxContainer {
-  display: grid;
-  box-sizing: content-box;
-}
-.grid .boxContainer img {
-  max-width: 100%;
-}
-.grid .boxContainer:nth-child(1) {
-  grid-column: span 2;
-  grid-row: span 1;
-}
-.grid .boxContainer:nth-child(2) {
-  grid-column: span 1;
-  grid-row: span 1;
-}
-.grid .boxContainer:nth-child(3) {
-  grid-column: span 1;
-  grid-row: span 1;
-}
-@media (max-width: 991px) {
-  .grid {
-    grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
-    grid-template-rows: minmax(auto, auto);
-  }
-  .grid .boxContainer {
-    grid-column: unset;
-    grid-row: unset;
-  }
-}
-</style>

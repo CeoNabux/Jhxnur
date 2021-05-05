@@ -5,23 +5,23 @@
         b-button.is-dark(outlined @click="drawerAction")
           .container.is-flex.is-justify-content-center.is-align-items-center
             icons.has-text-black(name="close" color="black")
-      section
-        vue-slick-carousel
-          .content(v-for="(item, i) in extras" :key="i")
-            router-link(:to="item.link")
-              p.is-size-3(@click="drawerAction") {{ item.item }}
-        vue-slick-carousel
-          .content(v-for="(item, i) in portfolio" :key="i")
-            router-link(:to="item.link")
-              p.is-size-3(@click="drawerAction") {{ item.item }}
-        vue-slick-carousel
-          .content(v-for="(item, i) in me" :key="i")
-            router-link(:to="item.link")
-              p.is-size-3(@click="drawerAction") {{ item.item }}
-        vue-slick-carousel
-          .content(v-for="(item, i) in home" :key="i")
-            router-link(:to="item.link")
-              p.is-size-3(@click="drawerAction") {{ item.item }}
+      section.sliderContainer
+        .slider
+          .slider-track
+            .slide(v-for="(item, i) in extras" :key="i")
+              router-link(:to="item.link")
+                p.is-size-3(@click="drawerAction") {{ item.item }}
+        .slider
+          .slider-track
+            .slide(v-for="(item, i) in portfolio" :key="i")
+              router-link(:to="item.link")
+                p.is-size-3(@click="drawerAction") {{ item.item }}
+        .slider
+          .slider-track
+            .slide(v-for="(item, i) in me" :key="i")
+              router-link(:to="item.link")
+                p.is-size-3(@click="drawerAction") {{ item.item }}
+
 </template>
 
 <script>
@@ -37,25 +37,45 @@ export default {
   },
   data: () => ({
     image: require("@/assets/img/wave.png"),
-    home: [
-      { item: "Home", link: "/" },
-      { item: "Home", link: "/" },
-      { item: "Home", link: "/" },
-      { item: "Home", link: "/" },
+    extras: [
+      { item: "Extras", link: "/extras-index" },
+      { item: "Extras", link: "/extras-index" },
+      { item: "Extras", link: "/extras-index" },
+      { item: "Extras", link: "/extras-index" },
+      { item: "Extras", link: "/extras-index" },
+      { item: "Extras", link: "/extras-index" },
+      { item: "Extras", link: "/extras-index" },
+      { item: "Extras", link: "/extras-index" },
+      { item: "Extras", link: "/extras-index" },
+      { item: "Extras", link: "/extras-index" },
+      { item: "Extras", link: "/extras-index" },
+      { item: "Extras", link: "/extras-index" },
     ],
     portfolio: [
       { item: "Portfolio", link: "/portfolio-index" },
       { item: "Portfolio", link: "/portfolio-index" },
       { item: "Portfolio", link: "/portfolio-index" },
       { item: "Portfolio", link: "/portfolio-index" },
-    ],
-    extras: [
-      { item: "Extras", link: "/extras-index" },
-      { item: "Extras", link: "/extras-index" },
-      { item: "Extras", link: "/extras-index" },
-      { item: "Extras", link: "/extras-index" },
+      { item: "Portfolio", link: "/portfolio-index" },
+      { item: "Portfolio", link: "/portfolio-index" },
+      { item: "Portfolio", link: "/portfolio-index" },
+      { item: "Portfolio", link: "/portfolio-index" },
+      { item: "Portfolio", link: "/portfolio-index" },
+      { item: "Portfolio", link: "/portfolio-index" },
+      { item: "Portfolio", link: "/portfolio-index" },
+      { item: "Portfolio", link: "/portfolio-index" },
+      { item: "Portfolio", link: "/portfolio-index" },
+      { item: "Portfolio", link: "/portfolio-index" },
     ],
     me: [
+      { item: "Me", link: "/me" },
+      { item: "Me", link: "/me" },
+      { item: "Me", link: "/me" },
+      { item: "Me", link: "/me" },
+      { item: "Me", link: "/me" },
+      { item: "Me", link: "/me" },
+      { item: "Me", link: "/me" },
+      { item: "Me", link: "/me" },
       { item: "Me", link: "/me" },
       { item: "Me", link: "/me" },
       { item: "Me", link: "/me" },
@@ -78,6 +98,7 @@ export default {
 </script>
 
 <style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
 .menu-hidden {
   transform: translateX(100%);
 }
@@ -94,5 +115,55 @@ export default {
 .menuContainer {
   width: 100vw;
   height: 100vh;
+}
+.sliderContainer {
+  width: 85vw;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+}
+.slider {
+  margin: auto 0;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  width: 90vw;
+}
+.slider-track {
+  display: flex;
+  margin: 5px 0;
+  padding: 10px 5px;
+  overflow: hidden;
+}
+.slider-track {
+  animation-play-state: paused;
+}
+.slide {
+  animation: marquee 5s linear infinite;
+  width: 200px;
+  margin: 0 50px;
+  padding: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.slide:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  background: white;
+}
+.slide p {
+  font-family: "Bungee Shade", cursive;
+}
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translate(-50%);
+  }
 }
 </style>
