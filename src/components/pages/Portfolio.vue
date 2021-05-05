@@ -2,7 +2,10 @@
   .container
     .container.is-widescreen.is-flex.px-4
       .columns.is-multiline
-        .column.is-full(v-for="imagen, i in stories.imagenes" :key="i")
+        .column.is-full.py-0
+          figure.image
+            img(v-lazy="stories.portada.filename")
+        .column.is-full.py-0(v-for="imagen, i in stories.imagenes" :key="i")
           figure.image
             img(v-lazy="imagen.image")
 </template>
@@ -55,7 +58,6 @@ export default {
             imagenes.forEach(({ filename: image }) =>
               this.stories.imagenes.push({ image })
             );
-
             return true;
           });
       } catch (e) {
