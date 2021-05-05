@@ -1,12 +1,12 @@
 <template>
-  <div class="container px-6">
+  <div class="container px-4">
     <div class="content mb-4">
       <h2 class="has-text-white is-size-2 is-size-4-mobile has-text-centered">
         {{ stories.nombre }}
       </h2>
     </div>
     <div class="columns is-dektop is-multiline my-6">
-      <div class="column is-half mr-4">
+      <div class="column is-half">
         <b-carousel
           :autoplay="false"
           with-carousel-list
@@ -42,7 +42,7 @@
       </div>
       <div class="column auto">
         <div class="content">
-          <p class="has-text-white">
+          <p class="has-text-white is-size-3 has-text-centered">
             {{ stories.nombre }}
           </p>
         </div>
@@ -57,7 +57,9 @@
           <p class="has-text-white is-size-5">$ {{ stories.precio }}</p>
         </div>
         <div class="block">
-          <b-button class="is-success">Aqui va el link de whatsapp</b-button>
+          <b-button @click="redirection" class="is-success">
+            <icons name="whatsapp"></icons>
+          </b-button>
         </div>
       </div>
     </div>
@@ -66,8 +68,12 @@
 
 <script>
 import storyapi from "@/utils/api.js";
+import icons from "@/components/global/Icons.vue";
 
 export default {
+  components: {
+    icons,
+  },
   data: () => ({
     stories: {},
     gallery: false,
@@ -144,6 +150,11 @@ export default {
       } else {
         document.documentElement.classList.remove("is-clipped");
       }
+    },
+    redirection() {
+      window.open(
+        `https://api.whatsapp.com/send?phone=+593993030840&text=Que%20tal%20Jhon,%20Que%20tal!%20Me%20interesa%20adquirir%20este%20asset%20${this.stories.nombre}`
+      );
     },
   },
 };

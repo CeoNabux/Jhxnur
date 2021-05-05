@@ -5,47 +5,74 @@
       p Con mucho esfuerzo y dedicacion se trabajó este proyecto con la finalidad de que expongas tu arte.
     .container.is-widescreen.m-0.p-2.is-relative.wrapper
       .is-flex.is-flex-direction-row.scroll-wrap
-        .container(v-for='asset, i in assets' :key="i")
+        .container(v-for="extra, i in extras[0]" :key="i")
           .asset-wrap.my-4.mx-4.is-flex.is-flex-direction-column.fondo
             figure.image
-              img(:src='asset.image')
+              img(:src='extra.image')
             .coverPhoto
               img(src="@/assets/plastic/paquete1.png")
             .media
               .media-content
-                h3.has-text-white.has-text-centered {{ asset.title }}
+                h3.has-text-white.has-text-centered {{ extra.nombre }}
 </template>
 
 <script>
+import storyapi from "@/utils/api.js";
+import extraPreview from "@/components/extrasSections/extraPreview.vue";
+
 export default {
+  components: {
+    extraPreview,
+  },
   data: () => ({
-    assets: [
-      {
-        image: require("@/assets/photos/casa-ladrillos.png"),
-        title: "Titulo de ejemplo",
-      },
-      {
-        image: require("@/assets/photos/chica-en-techo.png"),
-        title: "Titulo de ejemplo",
-      },
-      {
-        image: require("@/assets/photos/chica-en-techo.png"),
-        title: "Titulo de ejemplo",
-      },
-      {
-        image: require("@/assets/photos/chica-en-techo.png"),
-        title: "Titulo de ejemplo",
-      },
-      {
-        image: require("@/assets/photos/chica-en-techo.png"),
-        title: "Titulo de ejemplo",
-      },
-      {
-        image: require("@/assets/photos/chica-en-techo.png"),
-        title: "Titulo de ejemplo",
-      },
-    ],
+    extras: [],
   }),
+  created() {
+    // 4. Initialize the Storyblok Client Bridge to allow us to subscribe to events
+    // from the editor itself.
+    window.storyblok.init({
+      accessToken: "zTjkyshEcSSUYrcrcXL9Hgtt",
+    });
+    window.storyblok.on("change", () => {
+      // this will indicate to load the home story, exchange that with the full slug of your content
+      // either it is the page URL or hardcoded as in the example below
+      this.getStory("extras-index", "draft");
+    });
+    window.storyblok.pingEditor(() => {
+      if (window.storyblok.isInEditor()) {
+        this.getStory("extras", "draft");
+      } else {
+        this.getStory("extras", "published");
+      }
+    });
+  },
+  methods: {
+    async getStory(slug, version) {
+      let data;
+      try {
+        data = await storyapi
+          .get("cdn/stories/", {
+            starts_with: "extras/",
+            version: version,
+          })
+          .then((res) => {
+            return {
+              extras: res.data.stories.map((ex) => {
+                return {
+                  id: ex.slug,
+                  title: ex.content.nombre,
+                  precio: ex.content.precio,
+                  image: ex.content.portada.filename,
+                };
+              }),
+            };
+          });
+        this.extras.push(data.extras);
+      } catch (e) {
+        console.error(e);
+      }
+    },
+  },
 };
 </script>
 

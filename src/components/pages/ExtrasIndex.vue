@@ -48,7 +48,6 @@ export default {
             version: version,
           })
           .then((res) => {
-            console.log(res)
             return {
               extras: res.data.stories.map((ex) => {
                 return {
