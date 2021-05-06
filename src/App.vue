@@ -1,6 +1,6 @@
 <template lang="pug">
   #app
-    .fondo.aver.is-flex.is-flex-direction-column.is-justify-content-space-between.px-0
+    .fondo.aver.is-flex.is-flex-direction-column.is-justify-content-space-between.px-0.is-relative
       the-header
 
       the-menu

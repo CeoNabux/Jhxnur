@@ -3,8 +3,8 @@
     .content
       h2.is-size-2.font-color conoce mi portafolio
     .container
-      .columns.is-desktop.is-multiline(v-for="project,i in projects[0]" :key="i")
-        .column.is-one-thirds.p-4
+      .columns.is-desktop.is-multiline
+        .column.is-one-thirds.p-4(v-if="projects[0]" v-for="project,i in projects[0]" :key="i")
           projectPreview(:id="project.id" :coverPhoto="project.portada" :client="project.cliente" :logo="project.logo" :title="project.titulo")
 </template>
 
@@ -48,7 +48,6 @@ export default {
             version: version,
           })
           .then((res) => {
-            console.log(res);
             return {
               project: res.data.stories.map((pt) => {
                 console.log(pt);
@@ -62,10 +61,7 @@ export default {
               }),
             };
           });
-        console.log(data);
-        console.log(data.project.id);
         this.projects.push(data.project);
-        console.log(this.projects);
       } catch (e) {
         console.error(e);
       }
