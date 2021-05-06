@@ -1,8 +1,9 @@
 <template lang="pug">
   section.container.is-widescreen.is-flex.is-flex-direction-column.is-relative.my-6
-    .content.has-text-white.px-4
-      h2.letter-spacing.is-size-2.has-text-white Extras
-      p Con mucho esfuerzo y dedicacion se trabajó este proyecto con la finalidad de que expongas tu arte.
+    .container.is-fullhd.mx-0
+      .container.is-fullhd.has-text-centered.mb-6.mx-0
+        h2.letter-spacing.is-size-2.has-text-white Extras
+        p.has-text-white Con mucho esfuerzo y dedicacion se trabajó este proyecto con la finalidad de que expongas tu arte.
     .container.is-widescreen.m-0.p-2.is-relative.wrapper
       .is-flex.is-flex-direction-row.scroll-wrap
         .is-container.is-flex.is-flex-direction-column.is-justify-content-space-between(v-for="extra, i in extras[0]" :key="i")
