@@ -141,7 +141,6 @@ export default {
 
             return true;
           });
-        console.log(this.stories.descripcion);
       } catch (e) {
         console.error("Tienes que volverlo a intentar");
       }
