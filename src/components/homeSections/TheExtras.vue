@@ -6,7 +6,7 @@
         p.has-text-white Con mucho esfuerzo y dedicacion se trabajó este proyecto con la finalidad de que expongas tu arte.
     .container.is-widescreen.m-0.p-2.is-relative.wrapper
       .is-flex.is-flex-direction-row.scroll-wrap
-        .is-container.is-flex.is-flex-direction-column.is-justify-content-space-between(v-for="extra, i in extras[0]" :key="i")
+        .is-container.is-flex.is-flex-direction-column.is-justify-content-space-between(v-if="i < 5" v-for="extra, i in extras[0]" :key="i")
           router-link(:to="`extras/${extra.id}`")
             .card.fondo
               .card-image
@@ -101,9 +101,6 @@ export default {
   padding-bottom: 18px;
   box-sizing: content-box;
 }
-/* ::-webkit-scrollbar {
-  background: transparent;
-} */
 .asset-wrap {
   width: 250px;
 }
@@ -118,6 +115,11 @@ export default {
 @media only screen and (max-width: 420px) {
   .letter-spacing {
     letter-spacing: 16px;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  ::-webkit-scrollbar {
+    background: transparent;
   }
 }
 </style>
