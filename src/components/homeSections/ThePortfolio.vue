@@ -1,21 +1,22 @@
 <template lang="pug">
-  section.container.is-widescreen.my-6
-    .container.mb-4.mx-0
-      .content
-        p.has-text-white.mb-2.px-4 JhxnUr
-        h2.letter-spacing.is-size-2.has-text-white.px-4.m-0 Portfolio
-    .container.is-widescreen.px-4
-      .columns.is-desktop.is-multiline
-        .column.is-one-third(v-for="project,i in projects[0]" :key="i")
-          router-link(:to="`portfolio/${project.id}`")
-            .card.card-effect.m-2.fondo.is-relative
-              .card-image.is-relative
-                figure.image.is-4by3
-                  img(:src="project.portada")
-                //- .coverPhoto
-                //-   img(src="@/assets/plastic/paquete3.png")
-              .card-content
-                .card-title.has-text-centered.is-is-size-4 {{ project.titulo }}
+  section.container.my-6.mx-0.is-fluid.px-0
+    .container.is-fullhd.mx-0
+      .container.is-fullhd.is-flex.is-justify-content-center.mb-6.mx-0
+        .content
+          p.has-text-white.mb-2.px-4 JhxnUr
+          h2.letter-spacing.is-size-2.has-text-white.px-4.m-0 Portfolio
+      .container.px-4
+        .columns.is-desktop.is-multiline
+          .column.is-one-third(v-for="project,i in projects[0]" :key="i")
+            router-link(:to="`portfolio/${project.id}`")
+              .card.card-effect.m-2.is-relative
+                .card-image.is-relative
+                  figure.image.is-4by3
+                    img(:src="project.portada")
+                  //- .coverPhoto
+                  //-   img(src="@/assets/plastic/paquete3.png")
+                .card-content
+                  .card-title.has-text-centered.is-is-size-4 {{ project.titulo }}
 
 </template>
 
@@ -81,9 +82,6 @@ export default {
 </script>
 
 <style scoped>
-.fondo {
-  background: #000;
-}
 .coverPhoto {
   position: absolute;
   top: 0;
