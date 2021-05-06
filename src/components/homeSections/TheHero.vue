@@ -1,57 +1,48 @@
 <template lang="pug">
-  section.fondo.is-flex.is-justify-content-center.mb-6
-    .container.is-widescreen.is-relative.mx-3
-      .columns
-        .column.is-three-fifths.is-flex.is-justify-content-center.p-0
-          .is-flex.is-align-items-start.is-flex-direction-column.is-justify-content-center
-            .is-flex.is-align-items-start
-              .content.has-text-white.m-0
-                p.p-2.is-size-7 Jhon león
-            .is-flex
-              .content.is-fluid.has-text-white
-                h1
-                  .p-2.letter-spacing.has-text-white.is-size-1.is-size-2.mobile.m-0 CONTENT
-                  br
-                  .p-2.letter-spacing.has-text-white.is-size-1.is-size-2.mobile CREATOR
-            .is-flex
-              .content.has-text-white
-                p.p-2.is-size-3.is-size-4-mobile.m-0 Amante al arte
-                p.p-2.is-size-3.is-size-4-mobile materialicemos tus ideas
-            .is-flex
-              .content.has-text-warning.mt-4
-                p.p-2.is-size-6.is-is-size-7-mobile Haz click, arratra y exprésate
-        .column.p-0
-          .container.px-0
-            img.hero-image(src="@/assets/photos/chico-bengala.png")
+  section.is-fullhd.mb-6
+    .container.is-fullhd.fondo.is-centered.is-flex
+      .content-container.is-flex.is-align-items-center
+        .hero-body.is-flex.is-flex-direction-column.py-2
+          .block.content
+            p.is-size-4.has-text-white Jhon león
+          .block.content
+            h1
+              .letter-spacing.has-text-white.is-size-hero.is-size-2.mobile.m-0 CONTENT
+              br
+              .letter-spacing.has-text-white.is-size-hero.is-size-2.mobile CREATOR
+          .block.content
+            p.is-size-3.is-size-4-mobile.m-0.has-text-white.subtitle Amante al arte
+            p.is-size-3.is-size-4-mobile.has-text-white.subtitle materialicemos tus ideas
+      .image-container
 </template>
 
 <style scoped>
-.hero-image {
-  mask-image: linear-gradient(to right, transparent 12%, black 75%);
-  width: 100%;
+.letter-spacing {
+  letter-spacing: 33px;
 }
 .fondo {
-  background: #000;
+  clip-path: polygon(0 19%, 100% 6%, 100% 94%, 0 91%);
+  background-image: radial-gradient(
+      circle,
+      rgba(0, 0, 0, 0.2413340336134454) 0%,
+      rgba(0, 0, 0, 0.9948354341736695) 100%
+    ),
+    url("../../assets/photos/moto-no-exif-min.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.letter-spacing {
-  letter-spacing: 40px;
+.is-size-hero {
+  font-size: 3.25rem;
 }
-.gradiente {
+.content-container {
   position: relative;
-}
-.gradiente:before {
-  position: absolute;
   top: 0;
-  right: 0;
-  content: "";
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    rgba(0, 0, 0, 1) 8%,
-    rgba(255, 255, 255, 0.04805672268907568) 42%
-  );
+  left: 0;
+  z-index: 8;
+  height: 500px;
 }
+
 @media only screen and (max-width: 764px) {
   .letter-spacing {
     letter-spacing: 25px;
