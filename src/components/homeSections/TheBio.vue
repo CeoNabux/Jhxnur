@@ -11,8 +11,9 @@
         .content.px-4
           p.is-size-4.has-text-white.mb-3 dirigido a
           h2.letter-spacing.is-size-2.is-size-3-mobile.has-text-white.m-0 empresas y marcas en redes sociales
-        router-link.px-4(to="/me")
-          b-button.is-warning(alternate) Quieres conocer más sobre
+        .is-flex.is-justify-content-center
+          router-link.px-4(to="/me")
+            b-button.is-warning(alternate) Quieres conocer más sobre
       .column
         .container.px-4.is-relative
           figure.image-container2
