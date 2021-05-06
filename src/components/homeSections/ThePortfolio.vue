@@ -1,13 +1,13 @@
 <template lang="pug">
-  section.container.my-6.mx-0.is-fluid.px-0
+  section.container.is-fullhd.is-flex.is-justify-content-center.my-6.mx-0.is-fluid.px-0
     .container.is-fullhd.mx-0
       .container.is-fullhd.is-flex.is-justify-content-center.mb-6.mx-0
         .content
           p.has-text-white.mb-2.px-4 JhxnUr
           h2.letter-spacing.is-size-2.has-text-white.px-4.m-0 Portfolio
-      .container.px-4
-        .columns.is-desktop.is-multiline
-          .column.is-one-third(v-for="project,i in projects[0]" :key="i")
+      .container.px-4.is-centered
+        .columns.is-desktop.is-multiline.is-centered
+          .column.p-1.is-full-mobile.is-half-dektop.is-half-widescreen(v-for="project,i in projects[0]" :key="i")
             router-link(:to="`portfolio/${project.id}`")
               .card.card-effect.m-2.is-relative
                 .card-image.is-relative
@@ -92,7 +92,7 @@ export default {
   height: 100%;
 }
 .letter-spacing {
-  letter-spacing: 40px;
+  letter-spacing: 32px;
 }
 .card {
   transition: 0.5s ease-in-out;

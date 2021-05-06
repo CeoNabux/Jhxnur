@@ -108,16 +108,16 @@ export default {
   width: 250px;
 }
 .letter-spacing {
-  letter-spacing: 40px;
+  letter-spacing: 32px;
 }
 @media only screen and (max-width: 764px) {
   .letter-spacing {
-    letter-spacing: 25px;
+    letter-spacing: 24px;
   }
 }
 @media only screen and (max-width: 420px) {
   .letter-spacing {
-    letter-spacing: 20px;
+    letter-spacing: 16px;
   }
 }
 </style>

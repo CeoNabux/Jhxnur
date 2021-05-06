@@ -36,6 +36,9 @@ export default {
   font-family: "Bebas Neue";
   background: #000;
 }
+* {
+  box-sizing: border-box;
+}
 .margin {
   margin-top: auto;
 }
