@@ -7,7 +7,7 @@
           h2.letter-spacing.is-size-2.has-text-white.px-4.m-0 Portfolio
       .container.px-4.is-centered
         .columns.is-desktop.is-multiline.is-centered
-          .column.p-1.is-full-mobile.is-half-dektop.is-half-widescreen(v-for="project,i in projects[0]" :key="i")
+          .column.p-1.is-full-mobile.is-half-dektop.is-half-widescreen(v-if="i < 4" v-for="project,i in projects[0]" :key="i")
             router-link(:to="`portfolio/${project.id}`")
               .card.card-effect.m-2.is-relative
                 .card-image.is-relative
