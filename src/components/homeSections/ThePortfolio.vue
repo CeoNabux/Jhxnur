@@ -59,10 +59,8 @@ export default {
             version: version,
           })
           .then((res) => {
-            console.log(res);
             return {
               project: res.data.stories.map((pt) => {
-                console.log(pt);
                 return {
                   id: pt.slug,
                   titulo: pt.content.titulo,
