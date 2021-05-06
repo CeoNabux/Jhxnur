@@ -1,23 +1,21 @@
 <template lang="pug">
   section.container.is-widescreen.my-6
-    .container.mb-4
-      .content.px-4
-        p.has-text-white.mb-0 JhxnUr
-        h2.letter-spacing.is-size-2.has-text-white.m-0 Portfolio
+    .container.mb-4.mx-0
+      .content
+        p.has-text-white.mb-2.px-4 JhxnUr
+        h2.letter-spacing.is-size-2.has-text-white.px-4.m-0 Portfolio
     .container.is-widescreen.px-4
       .columns.is-desktop.is-multiline
         .column.is-one-third(v-for="project,i in projects[0]" :key="i")
-          .card.effect.m-2.fondo.is-relative
-            .card-image.is-relative
-              figure.image.is-4by3
-                img(:src="project.portada")
-              //- .coverPhoto
-              //-   img(src="@/assets/plastic/paquete3.png")
-            .card-content
-              .card-title.has-text-centered.is-is-size-4 {{ project.titulo }}
-          .hoverEffect.has-background-white
-            .content
-              p ver proyecto 👉
+          router-link(:to="`portfolio/${project.id}`")
+            .card.card-effect.m-2.fondo.is-relative
+              .card-image.is-relative
+                figure.image.is-4by3
+                  img(:src="project.portada")
+                //- .coverPhoto
+                //-   img(src="@/assets/plastic/paquete3.png")
+              .card-content
+                .card-title.has-text-centered.is-is-size-4 {{ project.titulo }}
 
 </template>
 
@@ -100,29 +98,37 @@ export default {
 .letter-spacing {
   letter-spacing: 40px;
 }
-.effect:hover .hoverEffect {
-  animation: cardEffect;
+.card {
+  transition: 0.5s ease-in-out;
 }
-.hoverEffect {
-  box-sizing: border-box;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  opacity: 0.8;
+.card-effect:hover {
+  transform: translateY(20px);
+}
+.card:before {
+  content: "  Conoce mas ---->";
+  color: rgb(207, 135, 0);
   position: absolute;
-  top: 100%;
+  top: 0;
   left: 0;
+  display: block;
   width: 100%;
   height: 100%;
+  background-image: linear-gradient(
+    to top,
+    #000000,
+    #3b3b3b,
+    #777777,
+    #b9b9b9,
+    #ffffff
+  );
+  z-index: 3;
+  transition: 0.5s all ease-in-out;
+  opacity: 0;
 }
-@keyframes cardEffect {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translatex(100%);
-  }
+.card-effect:hover:before {
+  opacity: 0.5;
 }
+
 @media only screen and (max-width: 764px) {
   .letter-spacing {
     letter-spacing: 25px;
