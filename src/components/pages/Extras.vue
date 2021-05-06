@@ -47,7 +47,7 @@
               {{ stories.nombre }}
             </p>
           </div>
-          <div class="content has-text-white">
+          <div v-if="stories.descripcion" class="content has-text-white">
             <rich-text-renderer
               :document="stories.descripcion"
               class="has-text-white"
@@ -141,6 +141,7 @@ export default {
 
             return true;
           });
+        console.log(this.stories.descripcion);
       } catch (e) {
         console.error("Tienes que volverlo a intentar");
       }
