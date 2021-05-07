@@ -1,19 +1,24 @@
 <template lang="pug">
-  .container.if-fullhd#cursor
+  #cursor
 </template>
 
-<style scoped>
-/* #cursor {
-  $size: 2px;
-  display: block;
-  position: absolute;
-  height: $size;
-  width: $size;
-  border-radius: ceil($size / 2);
-  background-color: transparent;
+<script>
+export default {
+  name: "TheCursor",
+};
+</script>
 
-  // hide on init
-  top: -100px;
-  left: -100px;
-} */
+<style scoped>
+#cursor {
+  width: 24px;
+  height: 24px;
+  border: 4px solid white;
+  border-radius: 50%;
+  background: transparent;
+  opacity: 0.6;
+  position: absolute;
+  z-index: 45;
+  top: 10px;
+  left: 20px;
+}
 </style>

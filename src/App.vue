@@ -8,6 +8,8 @@
       router-view.px-0
 
       the-footer.margin
+
+      the-cursor
 </template>
 
 <script>
@@ -15,6 +17,7 @@ import TheHeader from "@/components/layout/TheHeader.vue";
 import TheMenu from "@/components/layout/TheMenu.vue";
 import TheFooter from "@/components/layout/TheFooter.vue";
 import { mapGetters } from "vuex";
+import TheCursor from "@/components/TheCursor.vue";
 
 export default {
   name: "App",
@@ -22,6 +25,7 @@ export default {
     TheHeader,
     TheMenu,
     TheFooter,
+    TheCursor,
   },
   computed: {
     ...mapGetters("config_drawer", ["show"]),
