@@ -42,6 +42,7 @@ export default {
 }
 * {
   box-sizing: border-box;
+  /* cursor: none; */
 }
 .margin {
   margin-top: auto;

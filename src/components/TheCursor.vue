@@ -1,24 +1,46 @@
 <template lang="pug">
-  #cursor
+  #cursor(:style="{ top: this.y, left: this.x }")
 </template>
 
 <script>
 export default {
   name: "TheCursor",
+  data: () => ({
+    x: 0,
+    y: 0,
+  }),
+  mounted: function () {
+    this.cursor();
+  },
+  methods: {
+    cursor() {
+      window.addEventListener("mousemove", this.ubicacion);
+    },
+    cursorOut() {
+      window.removeEventListener("mousemove", this.ubicacion);
+    },
+    ubicacion(event) {
+      this.x = event.pageX - 32 + "px";
+      this.y = event.pageY - 32 + "px";
+    },
+  },
+  destroyed: function () {
+    this.cursorOut();
+  },
 };
 </script>
 
 <style scoped>
 #cursor {
-  width: 24px;
-  height: 24px;
-  border: 4px solid white;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
-  background: transparent;
+  border: 8px solid white;
   opacity: 0.6;
   position: absolute;
   z-index: 45;
-  top: 10px;
-  left: 20px;
+  transition-timing-function: ease-out;
+  cursor: none;
+  pointer-events: none;
 }
 </style>
