@@ -1,7 +1,7 @@
 <template lang="pug">
   section.container.is-widescreen.my-6
     .columns.is-desktop.mx-0.my-4.py-4
-      .column.p-0.mb-6
+      .column.p-0.mb-6.fondo
         .content.px-4.my-4
           p.is-size-4.has-text-white.mb-3 Hola, soy
           h2.letter-spacing.is-size-2.is-size-3-mobile.has-text-white.m-0 Jhon León
@@ -25,6 +25,12 @@
 </template>
 
 <style scoped>
+.fondo {
+  background-image: none;
+  background-position: top right;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
 .letter-spacing {
   letter-spacing: 12px;
 }
@@ -62,6 +68,17 @@
   .image-container2 {
     width: 274px;
     padding: 6px;
+  }
+  .fondo {
+    background-image: none;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .fondo {
+    background-image: url("../../assets/img/blob.svg");
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 }
 </style>
