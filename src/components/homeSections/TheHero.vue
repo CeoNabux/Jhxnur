@@ -1,7 +1,7 @@
 <template lang="pug">
   section.is-fullhd.mb-6
     .container.is-fullhd.fondo.is-centered.is-flex
-      .content-container.is-flex.is-align-items-center
+      .content-container.ml-6.is-flex.is-align-items-center
         .hero-body.is-flex.is-flex-direction-column.py-2
           .block.content
             p.is-size-4.has-text-white Jhon león

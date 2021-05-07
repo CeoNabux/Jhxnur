@@ -1,25 +1,25 @@
 <template lang="pug">
-  section.container.is-widescreen.my-6
-    .columns.is-desktop.mx-0.my-4.py-4
-      .column.p-0.mb-6.fondo
-        .content.px-4.my-4
-          p.is-size-4.has-text-white.mb-3 Hola, soy
-          h2.letter-spacing.is-size-2.is-size-3-mobile.has-text-white.m-0 Jhon León
-        .content.px-4
-          p.is-size-4.has-text-white.mb-3 y me dedico a
-          h2.letter-spacing.is-size-2.is-size-3-mobile.has-text-white.m-0 crar contenido digital
-        .content.px-4
-          p.is-size-4.has-text-white.mb-3 dirigido a
-          h2.letter-spacing.is-size-2.is-size-3-mobile.has-text-white.m-0 empresas y marcas en redes sociales
-        .is-flex.is-justify-content-center
-          router-link.px-4(to="/me")
-            b-button.is-warning(alternate) Quieres conocer más sobre
-      .column
-        .container.px-4.is-relative
-          figure.image-container2
-            img.imageBack
-          figure.image-container
-            img.imageFront
+    section.container.is-widescreen.is-centered
+      .columns.is-desktop.mx-0.my-4.py-4
+        .column.p-0.mb-6.fondo
+          .content.px-4.my-4
+            p.is-size-4.has-text-white.mb-3 Hola, soy
+            h2.letter-spacing.is-size-2.is-size-3-mobile.has-text-white.m-0 Jhon León
+          .content.px-4
+            p.is-size-4.has-text-white.mb-3 y me dedico a
+            h2.letter-spacing.is-size-2.is-size-3-mobile.has-text-white.m-0 crar contenido digital
+          .content.px-4
+            p.is-size-4.has-text-white.mb-3 dirigido a
+            h2.letter-spacing.is-size-2.is-size-3-mobile.has-text-white.m-0 empresas y marcas en redes sociales
+          .is-flex.is-justify-content-center
+            router-link.px-4(to="/me")
+              b-button.is-warning(alternate) Quieres conocer más sobre
+        .column
+          .container.px-4.is-relative
+            figure.image-container2
+              img.imageBack
+            figure.image-container
+              img.imageFront
 
 
 </template>
