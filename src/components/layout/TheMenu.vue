@@ -13,12 +13,12 @@
                 p.is-size-3(@click="drawerAction") {{ item.item }}
         .slider
           .slider-track
-            .slide(v-for="(item, i) in portfolio" :key="i")
+            .slide2(v-for="(item, i) in portfolio" :key="i")
               router-link(:to="item.link")
                 p.is-size-3(@click="drawerAction") {{ item.item }}
         .slider
           .slider-track
-            .slide(v-for="(item, i) in me" :key="i")
+            .slide3(v-for="(item, i) in me" :key="i")
               router-link(:to="item.link")
                 p.is-size-3(@click="drawerAction") {{ item.item }}
 
@@ -98,7 +98,11 @@ export default {
 </script>
 
 <style scoped>
-@import url("https://fonts.googleapis.com/css2?family=Bungee+Shade&display=swap");
+@font-face {
+  font-family: "Mandalore";
+  src: local("Mandalore"),
+    url("../../assets/fonts/mandalore/mandalore.ttf") format("truetype");
+}
 .menu-hidden {
   transform: translateX(100%);
 }
@@ -150,15 +154,51 @@ export default {
   justify-content: center;
   transition: all 0.2s ease;
 }
+.slide2 {
+  animation: marquee2 5s linear infinite;
+  width: 200px;
+  margin: 0 50px;
+  padding: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+.slide3 {
+  animation: marquee3 5s linear infinite;
+  width: 200px;
+  margin: 0 50px;
+  padding: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
 .slide:hover {
   cursor: pointer;
   transform: scale(1.1);
   background: white;
 }
-.slide p {
-  font-family: "Bungee Shade", cursive;
+p {
+  font-family: "Mandalore", cursive;
 }
 @keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translate(-50%);
+  }
+}
+@keyframes marquee2 {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translate(-50%);
+  }
+}
+@keyframes marquee3 {
   0% {
     transform: translateX(0);
   }
