@@ -50,7 +50,6 @@ export default {
   position: absolute;
   z-index: 45;
   transition-duration: 200ms;
-  transition-delay: 250ms;
   transition-timing-function: ease-out;
   pointer-events: none;
   animation: cursorAnim 0.5s infinite alternate;

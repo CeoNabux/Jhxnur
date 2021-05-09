@@ -117,7 +117,7 @@ export default {
     letter-spacing: 16px;
   }
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 1024px) {
   ::-webkit-scrollbar {
     background: transparent;
   }

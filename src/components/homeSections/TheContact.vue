@@ -66,10 +66,10 @@ export default {
       };
       try {
         await emailjs.send(
-          "service_d49zgnm",
-          "template_t6h7djm",
+          "service_qbq674q",
+          "template_ypqch5j",
           params,
-          "user_Mt6vpnGGpcC0h7a0M6e1w"
+          "user_O3zneNspDctOW6oH6NDX9"
         );
         alert("email enviado");
         this.resetInput();
