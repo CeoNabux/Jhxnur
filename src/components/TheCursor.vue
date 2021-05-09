@@ -25,13 +25,13 @@ export default {
       document.addEventListener("click", () => {
         this.clicky = true;
         setTimeout(() => {
-          this.click = false;
+          this.clicky = false;
         }, 500);
       });
     },
     ubicacion(event) {
-      this.x = event.pageX - 16 + "px";
-      this.y = event.pageY - 16 + "px";
+      this.x = event.pageX - 10 + "px";
+      this.y = event.pageY - 10 + "px";
     },
   },
   destroyed: function () {
@@ -42,13 +42,15 @@ export default {
 
 <style scoped>
 .cursor {
-  width: 32px;
-  height: 32px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  border: 1px solid white;
+  border: 1px solid orange;
   opacity: 0.6;
   position: absolute;
   z-index: 45;
+  transition-duration: 200ms;
+  transition-delay: 250ms;
   transition-timing-function: ease-out;
   pointer-events: none;
   animation: cursorAnim 0.5s infinite alternate;
@@ -56,15 +58,15 @@ export default {
 
 .cursor::after {
   content: "";
-  width: 48px;
-  height: 48px;
+  width: 20px;
+  height: 20px;
   position: absolute;
-  border: 8px solid gray;
+  border: 8px solid rgb(255, 217, 147);
   border-radius: 50%;
   opacity: 0.5;
-  top: -9px;
-  left: -9px;
-  animation: cursorAnim2 0.5 infinite alternate;
+  top: -1px;
+  left: -1px;
+  animation: cursorAnim2 0.5s infinite alternate;
 }
 @keyframes cursorAnim {
   from {
@@ -87,7 +89,8 @@ export default {
     transform: scale(1);
   }
   50% {
-    transform: scale(3);
+    transform: scale(5);
+    opacity: 0.5;
   }
   100% {
     transform: scale(1);
@@ -95,7 +98,8 @@ export default {
   }
 }
 .expand {
-  animation: cursoAnim3 0.5 infinite;
-  border: 1px solid #42b983;
+  animation: cursorAnim;
+  animation-duration: 500ms;
+  border: 1px solid green;
 }
 </style>
