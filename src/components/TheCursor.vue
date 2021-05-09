@@ -101,4 +101,9 @@ export default {
   animation-duration: 500ms;
   border: 1px solid green;
 }
+@media only screen and (max-width: 1023px) {
+  .cursor {
+    display: none;
+  }
+}
 </style>
