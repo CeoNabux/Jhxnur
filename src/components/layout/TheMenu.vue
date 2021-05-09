@@ -10,17 +10,17 @@
           .slider-track
             .slide(v-for="(item, i) in extras" :key="i")
               router-link(:to="item.link")
-                p.is-size-3(@click="drawerAction") {{ item.item }}
+                p(@click="drawerAction") {{ item.item }}
         .slider
           .slider-track
             .slide2(v-for="(item, i) in portfolio" :key="i")
               router-link(:to="item.link")
-                p.is-size-3(@click="drawerAction") {{ item.item }}
+                p(@click="drawerAction") {{ item.item }}
         .slider
           .slider-track
             .slide3(v-for="(item, i) in me" :key="i")
               router-link(:to="item.link")
-                p.is-size-3(@click="drawerAction") {{ item.item }}
+                p(@click="drawerAction") {{ item.item }}
 
 </template>
 
@@ -38,14 +38,6 @@ export default {
   data: () => ({
     image: require("@/assets/img/wave.png"),
     extras: [
-      { item: "Extras", link: "/extras-index" },
-      { item: "Extras", link: "/extras-index" },
-      { item: "Extras", link: "/extras-index" },
-      { item: "Extras", link: "/extras-index" },
-      { item: "Extras", link: "/extras-index" },
-      { item: "Extras", link: "/extras-index" },
-      { item: "Extras", link: "/extras-index" },
-      { item: "Extras", link: "/extras-index" },
       { item: "Extras", link: "/extras-index" },
       { item: "Extras", link: "/extras-index" },
       { item: "Extras", link: "/extras-index" },
@@ -152,7 +144,7 @@ export default {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
+  transition: all 5s ease;
 }
 .slide2 {
   animation: marquee2 5s linear infinite;
@@ -181,6 +173,8 @@ export default {
 }
 p {
   font-family: "Mandalore", cursive;
+  font-size: 3rem;
+  color: black;
 }
 @keyframes marquee {
   0% {
