@@ -5,22 +5,22 @@
         b-button.is-dark(outlined @click="drawerAction")
           .container.is-flex.is-justify-content-center.is-align-items-center
             icons.has-text-black(name="close" color="black")
-      .container.mt-6.p-3
+      .container.mt-6.p-3(@click="drawerAction")
         VueSlickCarousel(v-bind="settings")
           div(v-for="item, i in home")
             router-link(:to="item.link")
               p.is-size-1 {{ item.item }}
-      .container.mt-6.p-3
+      .container.mt-6.p-3(@click="drawerAction")
         VueSlickCarousel(v-bind="settings")
           div(v-for="item, i in extras")
             router-link(:to="item.link")
               p.is-size-1 {{ item.item }}
-      .container.mt-6.p-3
+      .container.mt-6.p-3(@click="drawerAction")
         VueSlickCarousel(v-bind="settings")
           div(v-for="item, i in portfolio")
             router-link(:to="item.link")
               p.is-size-1 {{ item.item }}
-      .container.mt-6.p-3
+      .container.mt-6.p-3(@click="drawerAction")
         VueSlickCarousel(v-bind="settings")
           div(v-for="item, i in me")
             router-link(:to="item.link")
@@ -47,7 +47,6 @@ export default {
       autoplaySpeed: 0,
       speed: 1000,
     },
-    image: require("@/assets/img/wave.png"),
     home: [
       { item: "Home", link: "/" },
       { item: "Home", link: "/" },
@@ -118,7 +117,7 @@ export default {
   left: 0;
   right: 0;
   bottom: 0;
-  transition-duration: 500ms;
+  transition-duration: 200ms;
   transition-delay: 10ms;
 }
 .menuContainer {
