@@ -50,7 +50,6 @@ export default {
           .then((res) => {
             return {
               project: res.data.stories.map((pt) => {
-                console.log(pt);
                 return {
                   id: pt.slug,
                   titulo: pt.content.titulo,

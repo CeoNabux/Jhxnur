@@ -1,27 +1,30 @@
 <template lang="pug">
   .container.is-fluid.has-background-white.p-0.m-0.menu(:class="{'menu-hidden': !show}")
-    .container.is-widescreen.py-4.menuContainer
+    .container.is-widescreen.py-4.menuContainer.is-centered
       .container.is-flex.is-justify-content-flex-end.py-2
         b-button.is-dark(outlined @click="drawerAction")
           .container.is-flex.is-justify-content-center.is-align-items-center
             icons.has-text-black(name="close" color="black")
-      section.sliderContainer
-        .slider
-          .slider-track
-            .slide(v-for="(item, i) in extras" :key="i")
-              router-link(:to="item.link")
-                p(@click="drawerAction") {{ item.item }}
-        .slider
-          .slider-track
-            .slide2(v-for="(item, i) in portfolio" :key="i")
-              router-link(:to="item.link")
-                p(@click="drawerAction") {{ item.item }}
-        .slider
-          .slider-track
-            .slide3(v-for="(item, i) in me" :key="i")
-              router-link(:to="item.link")
-                p(@click="drawerAction") {{ item.item }}
-
+      .container.mt-6.p-3
+        VueSlickCarousel(v-bind="settings")
+          div(v-for="item, i in home")
+            router-link(:to="item.link")
+              p.is-size-1 {{ item.item }}
+      .container.mt-6.p-3
+        VueSlickCarousel(v-bind="settings")
+          div(v-for="item, i in extras")
+            router-link(:to="item.link")
+              p.is-size-1 {{ item.item }}
+      .container.mt-6.p-3
+        VueSlickCarousel(v-bind="settings")
+          div(v-for="item, i in portfolio")
+            router-link(:to="item.link")
+              p.is-size-1 {{ item.item }}
+      .container.mt-6.p-3
+        VueSlickCarousel(v-bind="settings")
+          div(v-for="item, i in me")
+            router-link(:to="item.link")
+              p.is-size-1 {{ item.item }}
 </template>
 
 <script>
@@ -36,22 +39,32 @@ export default {
     VueSlickCarousel,
   },
   data: () => ({
+    settings: {
+      arrows: false,
+      infinite: true,
+      slidesToShow: 5,
+      autoplay: true,
+      autoplaySpeed: 0,
+      speed: 1000,
+    },
     image: require("@/assets/img/wave.png"),
+    home: [
+      { item: "Home", link: "/" },
+      { item: "Home", link: "/" },
+      { item: "Home", link: "/" },
+      { item: "Home", link: "/" },
+      { item: "Home", link: "/" },
+      { item: "Home", link: "/" },
+    ],
     extras: [
+      { item: "Extras", link: "/extras-index" },
+      { item: "Extras", link: "/extras-index" },
       { item: "Extras", link: "/extras-index" },
       { item: "Extras", link: "/extras-index" },
       { item: "Extras", link: "/extras-index" },
       { item: "Extras", link: "/extras-index" },
     ],
     portfolio: [
-      { item: "Portfolio", link: "/portfolio-index" },
-      { item: "Portfolio", link: "/portfolio-index" },
-      { item: "Portfolio", link: "/portfolio-index" },
-      { item: "Portfolio", link: "/portfolio-index" },
-      { item: "Portfolio", link: "/portfolio-index" },
-      { item: "Portfolio", link: "/portfolio-index" },
-      { item: "Portfolio", link: "/portfolio-index" },
-      { item: "Portfolio", link: "/portfolio-index" },
       { item: "Portfolio", link: "/portfolio-index" },
       { item: "Portfolio", link: "/portfolio-index" },
       { item: "Portfolio", link: "/portfolio-index" },
@@ -106,7 +119,7 @@ export default {
   right: 0;
   bottom: 0;
   transition-duration: 500ms;
-  transition-delay: 100ms;
+  transition-delay: 10ms;
 }
 .menuContainer {
   width: 100vw;
