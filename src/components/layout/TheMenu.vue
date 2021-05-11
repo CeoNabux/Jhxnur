@@ -9,22 +9,22 @@
         VueSlickCarousel(v-bind="settings")
           div(v-for="item, i in home")
             router-link(:to="item.link")
-              p.is-size-1 {{ item.item }}
-      .container.mt-6.p-3(@click="drawerAction")
+              p {{ item.item }}
+      .container.mt-4.p-3(@click="drawerAction")
         VueSlickCarousel(v-bind="settings")
           div(v-for="item, i in extras")
             router-link(:to="item.link")
-              p.is-size-1 {{ item.item }}
-      .container.mt-6.p-3(@click="drawerAction")
+              p {{ item.item }}
+      .container.mt-4.p-3(@click="drawerAction")
         VueSlickCarousel(v-bind="settings")
           div(v-for="item, i in portfolio")
             router-link(:to="item.link")
-              p.is-size-1 {{ item.item }}
-      .container.mt-6.p-3(@click="drawerAction")
+              p {{ item.item }}
+      .container.mt-4.p-3(@click="drawerAction")
         VueSlickCarousel(v-bind="settings")
           div(v-for="item, i in me")
             router-link(:to="item.link")
-              p.is-size-1 {{ item.item }}
+              p {{ item.item }}
 </template>
 
 <script>
@@ -210,6 +210,31 @@ p {
   }
   100% {
     transform: translate(-50%);
+  }
+}
+@media only screen and (max-width: 1024px) {
+  p {
+    font-size: 2.5rem;
+  }
+}
+@media only screen and (max-width: 780px) {
+  p {
+    font-size: 2.25rem;
+  }
+}
+@media only screen and (max-width: 480px) {
+  p {
+    font-size: 1.5rem;
+  }
+}
+@media only screen and (max-width: 420px) {
+  p {
+    font-size: 0.75rem;
+  }
+}
+@media only screen and (max-width: 320px) {
+  p {
+    font-size: 1rem;
   }
 }
 </style>
