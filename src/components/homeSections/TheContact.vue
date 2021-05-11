@@ -29,13 +29,13 @@
           .column.is-flex.is-align-items-center.is-justify-content-center
             .columns
               .column.is-flex.is-justify-content-center.is-align-items-center
-                a(href="https://www.instagram.com/jhxnur")
+                a(href="https://www.instagram.com/jhxnur" target="_blank")
                   icons.has-text-white(name="instagram")
               .column.is-flex.is-justify-content-center.is-align-items-center
-                a(href="https://youtube.com/channel/UCmYaKnHayQMyxm-j3kq499g")
+                a(href="https://youtube.com/channel/UCmYaKnHayQMyxm-j3kq499g" target="_blank")
                   icons.has-text-white(name="youtube")
               .column.is-flex.is-justify-content-center.is-align-items-center
-                a(href="https://www.behance.net/jhonlen")
+                a(href="https://www.behance.net/jhonlen" target="_blank")
                   img.svgIcon(src="@/assets/icons/behance.svg")
 </template>
 
