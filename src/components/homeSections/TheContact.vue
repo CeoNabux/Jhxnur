@@ -66,10 +66,10 @@ export default {
       };
       try {
         await emailjs.send(
-          "service_qbq674q",
-          "template_ypqch5j",
+          process.env.VUE_APP_SERVICE,
+          process.env.VUE_APP_TEMPLATE,
           params,
-          "user_O3zneNspDctOW6oH6NDX9"
+          process.env.VUE_APP_USERID
         );
         alert("email enviado");
         this.resetInput();
