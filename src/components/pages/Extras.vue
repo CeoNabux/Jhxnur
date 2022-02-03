@@ -98,7 +98,7 @@ export default {
     // 4. Initialize the Storyblok Client Bridge to allow us to subscribe to events
     // from the editor itself.
     window.storyblok.init({
-      accessToken: "zTjkyshEcSSUYrcrcXL9Hgtt",
+      accessToken: process.env.VUE_APP_STORYBLOK,
     });
     window.storyblok.on("change", () => {
       // this will indicate to load the home story, exchange that with the full slug of your content
